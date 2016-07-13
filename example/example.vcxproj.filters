@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Test Application">
+      <UniqueIdentifier>{7d438305-f322-42c5-8b9a-66d5a81d0ed2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wtMapbox">
+      <UniqueIdentifier>{ecc4641f-b585-4bb7-bf7c-71d674826186}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wtMapbox\Layer">
+      <UniqueIdentifier>{97fe50be-49fe-4c8e-8636-f885ab1a81a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wtMapbox\Source">
+      <UniqueIdentifier>{b285de37-dab5-4a2c-86ba-83e5afcc2636}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Test Application</Filter>
+    </ClCompile>
+    <ClCompile Include="mapboxApplication.cpp">
+      <Filter>Test Application</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Test Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\BackgroundLayer.cpp">
+      <Filter>wtMapbox\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Layer.cpp">
+      <Filter>wtMapbox\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Source.cpp">
+      <Filter>wtMapbox\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\GeoJSONSource.cpp">
+      <Filter>wtMapbox\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Coordinate.cpp">
+      <Filter>wtMapbox</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Map.cpp">
+      <Filter>wtMapbox</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuBar.cpp">
+      <Filter>Test Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Enumerations.cpp">
+      <Filter>wtMapbox</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\CircleLayer.cpp">
+      <Filter>wtMapbox\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\FillLayer.cpp">
+      <Filter>wtMapbox\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\LineLayer.cpp">
+      <Filter>wtMapbox\Layer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Test Application</Filter>
+    </ClInclude>
+    <ClInclude Include="mapboxApplication.h">
+      <Filter>Test Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\BackgroundLayer.h">
+      <Filter>wtMapbox\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Layer.h">
+      <Filter>wtMapbox\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Source.h">
+      <Filter>wtMapbox\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GeoJSONSource.h">
+      <Filter>wtMapbox\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Coordinate.h">
+      <Filter>wtMapbox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Map.h">
+      <Filter>wtMapbox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\wtMapbox.h">
+      <Filter>wtMapbox</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuBar.h">
+      <Filter>Test Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Enumerations.h">
+      <Filter>wtMapbox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\CircleLayer.h">
+      <Filter>wtMapbox\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\FillLayer.h">
+      <Filter>wtMapbox\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\LineLayer.h">
+      <Filter>wtMapbox\Layer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\bin\wtMapExample.css" />
+  </ItemGroup>
+</Project>
