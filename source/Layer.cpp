@@ -15,12 +15,12 @@ namespace MapBox {
 
   std::string layerToType(LAYERTYPE type) {
     switch (type) {
-      case LT_BACKGROUND: return "background";
-      case LT_FILL      : return "fill";
-      case LT_LINE      : return "line";
-      case LT_SYMBOL    : return "symbol";
-      case LT_RASTER    : return "raster";
-      case LT_CIRCLE    : return "circle";
+      case LAYERTYPE::Background: return "background";
+      case LAYERTYPE::Fill      : return "fill";
+      case LAYERTYPE::Line      : return "line";
+      case LAYERTYPE::Symbol    : return "symbol";
+      case LAYERTYPE::Raster    : return "raster";
+      case LAYERTYPE::Circle    : return "circle";
     }
   }
 

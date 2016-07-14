@@ -57,6 +57,15 @@
     <ClCompile Include="..\source\LineLayer.cpp">
       <Filter>wtMapbox\Layer</Filter>
     </ClCompile>
+    <ClCompile Include="..\include\SymbolLayer.cpp">
+      <Filter>wtMapbox\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Conversions.cpp">
+      <Filter>wtMapbox</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\RasterLayer.cpp">
+      <Filter>wtMapbox\Layer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -99,6 +108,18 @@
       <Filter>wtMapbox\Layer</Filter>
     </ClInclude>
     <ClInclude Include="..\include\LineLayer.h">
+      <Filter>wtMapbox\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\SymbolLayer.h">
+      <Filter>wtMapbox\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Definitions.h">
+      <Filter>wtMapbox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Conversions.h">
+      <Filter>wtMapbox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RasterLayer.h">
       <Filter>wtMapbox\Layer</Filter>
     </ClInclude>
   </ItemGroup>

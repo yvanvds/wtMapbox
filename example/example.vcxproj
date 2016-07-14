@@ -21,6 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{486E7E2F-DD67-41FD-977E-7C976ACF5A34}</ProjectGuid>
     <RootNamespace>example</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -69,7 +70,7 @@
     <OutDir>$(SolutionDir)\bin\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)..\bin</OutDir>
+    <OutDir>$(SolutionDir)..\bin\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)\..\bin</OutDir>
@@ -146,8 +147,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\include\SymbolLayer.cpp" />
     <ClCompile Include="..\source\BackgroundLayer.cpp" />
     <ClCompile Include="..\source\CircleLayer.cpp" />
+    <ClCompile Include="..\source\Conversions.cpp" />
     <ClCompile Include="..\source\Coordinate.cpp" />
     <ClCompile Include="..\source\Enumerations.cpp" />
     <ClCompile Include="..\source\FillLayer.cpp" />
@@ -155,6 +158,7 @@
     <ClCompile Include="..\source\Layer.cpp" />
     <ClCompile Include="..\source\LineLayer.cpp" />
     <ClCompile Include="..\source\Map.cpp" />
+    <ClCompile Include="..\source\RasterLayer.cpp" />
     <ClCompile Include="..\source\Source.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mapboxApplication.cpp" />
@@ -167,14 +171,18 @@
   <ItemGroup>
     <ClInclude Include="..\include\BackgroundLayer.h" />
     <ClInclude Include="..\include\CircleLayer.h" />
+    <ClInclude Include="..\include\Conversions.h" />
     <ClInclude Include="..\include\Coordinate.h" />
+    <ClInclude Include="..\include\Definitions.h" />
     <ClInclude Include="..\include\Enumerations.h" />
     <ClInclude Include="..\include\FillLayer.h" />
     <ClInclude Include="..\include\GeoJSONSource.h" />
     <ClInclude Include="..\include\Layer.h" />
     <ClInclude Include="..\include\LineLayer.h" />
     <ClInclude Include="..\include\Map.h" />
+    <ClInclude Include="..\include\RasterLayer.h" />
     <ClInclude Include="..\include\Source.h" />
+    <ClInclude Include="..\include\SymbolLayer.h" />
     <ClInclude Include="..\include\wtMapbox.h" />
     <ClInclude Include="mapboxApplication.h" />
     <ClInclude Include="MenuBar.h" />

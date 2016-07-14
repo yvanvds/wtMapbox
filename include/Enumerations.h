@@ -1,12 +1,20 @@
 #pragma once
 
 namespace MapBox {
+
+  enum class LAYERTYPE {
+    Background,
+    Fill,
+    Line,
+    Symbol,
+    Raster,
+    Circle,
+  };
+
   enum class ANCHOR {
     Map,
     Viewport,
   };
-
-  std::string AnchorToString(ANCHOR value);
 
   enum class CAP {
     Butt,
@@ -14,13 +22,46 @@ namespace MapBox {
     Square,
   };
 
-  std::string CapToString(CAP value);
-
   enum class JOIN {
     Bevel,
     Round,
     Miter,
   };
 
-  std::string JoinToString(JOIN value);
+  enum class PLACEMENT {
+    Point,
+    Line,
+  };
+
+ 
+
+  enum class JUSTIFY {
+    Left,
+    Center,
+    Right,
+  };
+
+  
+
+  enum class TEXT_ANCHOR {
+    Center,
+    Left,
+    Right,
+    Top,
+    Bottom,
+    TopLeft,
+    TopRight,
+    BottomLeft,
+    BottomRight,
+  };
+
+  
+
+  enum class TRANSFORM {
+    None,
+    UPPERCASE,
+    lowercase,
+  };
+
+  
 }
