@@ -15,20 +15,25 @@ namespace MapBox {
 
   std::string typeAsString(SOURCETYPE type) {
     switch (type) {
-    case ST_VECTOR: return "vector";
-    case ST_RASTER: return "raster";
-    case ST_GEOJSON: return "geojson";
-    case ST_IMAGE: return "image";
-    case ST_VIDEO: return "video";
+    case SOURCETYPE::Vector : return "vector" ;
+    case SOURCETYPE::Raster : return "raster" ;
+    case SOURCETYPE::GeoJSON: return "geojson";
+    case SOURCETYPE::Image  : return "image"  ;
+    case SOURCETYPE::Video  : return "video"  ;
     }
   }
 
-  Source::Source(SOURCETYPE type) : type_(type), id_(getNextSourceID())
+  Source::Source(SOURCETYPE type) 
+    : type_(type)
+    , id_(getNextSourceID())
   {
 
   }
 
- 
+  Source & Source::setFromURL(const std::string & url) {
+    url_ = url;
+    return *this;
+  }
 
 
 } // namespace MapBox

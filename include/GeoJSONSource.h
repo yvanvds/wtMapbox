@@ -10,13 +10,13 @@ namespace MapBox {
   public:
     GeoJSONSource();
 
-    GeoJSONSource & setFromURL(const std::string & url);
+    
     GeoJSONSource & setMaxZoom(int level);
     // maxClusterZoom defaults to maxZoom - 1
     GeoJSONSource & setCluster(int radius = 50, int maxClusterZoom = -1);
     GeoJSONSource & disableCluster();
 
-    const std::string & url() { return url_; }
+    C std::string & url() { return url_; }
 
     int  maxZoom       () { return maxZoom_       ; }
     bool isCluster     () { return cluster_       ; }
@@ -26,7 +26,7 @@ namespace MapBox {
     virtual std::string render();
 
   private:
-    std::string url_;
+    
     int maxZoom_;
     bool cluster_;
     int clusterRadius_;

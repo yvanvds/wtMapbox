@@ -2,15 +2,15 @@
 
 namespace MapBox {
 
-  GeoJSONSource::GeoJSONSource() : Source(ST_GEOJSON), maxZoom_(18), cluster_(false)
+  GeoJSONSource::GeoJSONSource() 
+    : Source(SOURCETYPE::GeoJSON)
+    , maxZoom_(18)
+    , cluster_(false)
   {
 
   }
 
-  GeoJSONSource & GeoJSONSource::setFromURL(const std::string & url) {
-    url_ = url;
-    return *this;
-  }
+  
 
   GeoJSONSource & GeoJSONSource::setMaxZoom(int level) {
     maxZoom_ = level;

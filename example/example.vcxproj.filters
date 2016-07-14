@@ -45,9 +45,6 @@
     <ClCompile Include="MenuBar.cpp">
       <Filter>Test Application</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\Enumerations.cpp">
-      <Filter>wtMapbox</Filter>
-    </ClCompile>
     <ClCompile Include="..\source\CircleLayer.cpp">
       <Filter>wtMapbox\Layer</Filter>
     </ClCompile>
@@ -65,6 +62,18 @@
     </ClCompile>
     <ClCompile Include="..\source\RasterLayer.cpp">
       <Filter>wtMapbox\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\VectorSource.cpp">
+      <Filter>wtMapbox\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\RasterSource.cpp">
+      <Filter>wtMapbox\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\ImageSource.cpp">
+      <Filter>wtMapbox\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\VideoSource.cpp">
+      <Filter>wtMapbox\Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +130,18 @@
     </ClInclude>
     <ClInclude Include="..\include\RasterLayer.h">
       <Filter>wtMapbox\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\VectorSource.h">
+      <Filter>wtMapbox\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RasterSource.h">
+      <Filter>wtMapbox\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ImageSource.h">
+      <Filter>wtMapbox\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\VideoSource.h">
+      <Filter>wtMapbox\Source</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

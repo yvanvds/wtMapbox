@@ -11,6 +11,14 @@ namespace MapBox {
     Circle,
   };
 
+  enum class SOURCETYPE {
+    Vector,
+    Raster,
+    GeoJSON,
+    Image,
+    Video,
+  };
+
   enum class ANCHOR {
     Map,
     Viewport,

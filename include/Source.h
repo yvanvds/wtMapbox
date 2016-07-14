@@ -2,31 +2,28 @@
 
 #include <string>
 #include <vector>
+#include "Enumerations.h"
+#include "Definitions.h"
 
 namespace MapBox {
   class Coordinate;
-
-  enum SOURCETYPE {
-    ST_VECTOR,
-    ST_RASTER,
-    ST_GEOJSON,
-    ST_IMAGE,
-    ST_VIDEO,
-  };
 
   class Source
   {
   public:
     Source(SOURCETYPE type);
     
-    SOURCETYPE type() { return type_; }
-    const std::string & id() { return id_; }
+      SOURCETYPE    type() { return type_; }
+    C std::string & id  () { return id_  ; }
     
+    virtual Source & setFromURL(C std::string & url);
+
     virtual std::string render() = 0;
 
   protected:
     SOURCETYPE type_;
     std::string id_;
+    std::string url_;
 
   };
 
