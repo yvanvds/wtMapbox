@@ -20,6 +20,7 @@ namespace MapBox {
     Layer & setVisible(bool value); bool visible() C;
 
     Layer & setSource(Source * source);
+    Layer & setSourceLayer(C std::string & value);
     Layer & setZoom  (int min, int max);
     Layer & setFilter(const std::string & value);
     
@@ -48,6 +49,7 @@ namespace MapBox {
     Source      * source_;
     LAYERTYPE     type_  ;
     std::string   filter_;
+    std::string   slayer_;
     Map         * parent_;
 
     int minZoom_;

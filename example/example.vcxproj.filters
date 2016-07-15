@@ -90,6 +90,9 @@
     <ClCompile Include="Heatmap.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
+    <ClCompile Include="HeightLines.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -171,6 +174,9 @@
       <Filter>Test Application\demos</Filter>
     </ClInclude>
     <ClInclude Include="Heatmap.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="HeightLines.h">
       <Filter>Test Application\demos</Filter>
     </ClInclude>
   </ItemGroup>

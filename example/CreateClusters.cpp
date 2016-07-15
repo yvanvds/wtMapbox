@@ -69,7 +69,7 @@ void CreateClusters::onShow() {
   }
   
   // change style and add layers
-  APP->getMap()->setMapStyle(MapBox::MAPSTYLE_DARK, true);
+  APP->getMap()->setMapStyle(MapBox::MAPSTYLE::Dark, true);
   APP->getMap()->addSource(&source);
   APP->getMap()->addLayer(&unclusteredLayer);
   APP->getMap()->addLayer(&clusterLayer[0]);

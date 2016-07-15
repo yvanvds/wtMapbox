@@ -24,18 +24,18 @@ namespace MapBox {
 
   std::string ToScript(CAP value) {
     switch (value) {
-    case CAP::Butt: return "butt";
-    case CAP::Round: return "round";
-    case CAP::Square: return "square";
+    case CAP::Butt: return "'butt'";
+    case CAP::Round: return "'round'";
+    case CAP::Square: return "'square'";
     }
     return std::string();
   }
 
   std::string ToScript(JOIN value) {
     switch (value) {
-    case JOIN::Bevel: return "bevel";
-    case JOIN::Round: return "round";
-    case JOIN::Miter: return "miter";
+    case JOIN::Bevel: return "'bevel'";
+    case JOIN::Round: return "'round'";
+    case JOIN::Miter: return "'miter'";
     }
     return std::string();
   }

@@ -16,5 +16,8 @@
 #include <Wt/WStackedWidget>
 #include <Wt/WButtonGroup>
 #include <Wt/WRadioButton>
+#include <Wt/WGridLayout>
+#include <Wt/WHBoxLayout>
+#include <Wt/WVBoxLayout>
 
 #define APP ((mapboxApplication*)Wt::WApplication::instance())

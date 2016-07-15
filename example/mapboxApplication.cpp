@@ -17,7 +17,7 @@ mapboxApplication::mapboxApplication(const WEnvironment & env) : WApplication(en
   WContainerWidget * mainContent = new WContainerWidget(root());
   mainContent->setStyleClass("examplemap");
   map = new MapBox::Map(mainContent);
-  map->setMapStyle(MapBox::MAPSTYLE_STREETS);
+  map->setMapStyle(MapBox::MAPSTYLE::Streets);
   map->setZoom(14);
   map->setCenter(MapBox::Coordinate(51.515823, -0.124331));
 

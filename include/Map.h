@@ -9,12 +9,14 @@
 namespace MapBox {
 
   // predefined mapbox styles
-  const std::string MAPSTYLE_STREETS = "mapbox://styles/mapbox/streets-v9";
-  const std::string MAPSTYLE_OUTDOORS = "mapbox://styles/mapbox/outdoors-v9";
-  const std::string MAPSTYLE_LIGHT = "mapbox://styles/mapbox/light-v9";
-  const std::string MAPSTYLE_DARK = "mapbox://styles/mapbox/dark-v9";
-  const std::string MAPSTYLE_SATELLITE = "mapbox://styles/mapbox/satellite-v9";
-  const std::string MAPSTYLE_SATELLITE_STREETS = "mapbox://styles/mapbox/satellite-streets-v9";
+  namespace MAPSTYLE {
+    const std::string Streets = "mapbox://styles/mapbox/streets-v9";
+    const std::string Outdoors = "mapbox://styles/mapbox/outdoors-v9";
+    const std::string Light = "mapbox://styles/mapbox/light-v9";
+    const std::string Dark = "mapbox://styles/mapbox/dark-v9";
+    const std::string Satellite = "mapbox://styles/mapbox/satellite-v9";
+    const std::string SatelliteStreets = "mapbox://styles/mapbox/satellite-streets-v9";
+  }
 
   // interactions
   const std::string I_SCROLLZOOM = "scrollZoom";

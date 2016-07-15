@@ -47,6 +47,11 @@ namespace MapBox {
     return *this;
   }
 
+  Layer & Layer::setSourceLayer(C std::string & value) {
+    slayer_ = value;
+    return *this;
+  }
+
   Layer & Layer::setZoom(int min, int max) {
     minZoom_ = min;
     maxZoom_ = max;
@@ -178,6 +183,10 @@ namespace MapBox {
       << "  'id': '" << id_ << "',\n"
       << "  'type': '" << layerToType(type_) << "',\n"
       << "  'source': '" << source_->id() << "',\n";
+
+    if (slayer_.length()) {
+      stream << "  'source-layer': '" << slayer_ << "',\n";
+    }
 
     if (minZoom_ > -1) {
       stream << "  'minzoom': " << minZoom_ << ",\n";

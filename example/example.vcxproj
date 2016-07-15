@@ -166,6 +166,7 @@
     <ClCompile Include="CreateClusters.cpp" />
     <ClCompile Include="DisplayMap.cpp" />
     <ClCompile Include="Heatmap.cpp" />
+    <ClCompile Include="HeightLines.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mapboxApplication.cpp" />
     <ClCompile Include="MapStyle.cpp" />
@@ -195,6 +196,7 @@
     <ClInclude Include="..\include\VectorSource.h" />
     <ClInclude Include="..\include\VideoSource.h" />
     <ClInclude Include="..\include\wtMapbox.h" />
+    <ClInclude Include="HeightLines.h" />
     <ClInclude Include="CreateClusters.h" />
     <ClInclude Include="Demo.h" />
     <ClInclude Include="DisplayMap.h" />

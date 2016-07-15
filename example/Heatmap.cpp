@@ -45,7 +45,7 @@ Heatmap::Heatmap()
 
 void Heatmap::onShow()
 {
-  APP->getMap()->setMapStyle(MapBox::MAPSTYLE_DARK, true);
+  APP->getMap()->setMapStyle(MapBox::MAPSTYLE::Dark, true);
   APP->getMap()->addSource(&source);
   APP->getMap()->addLayer(&layer[0]);
   APP->getMap()->addLayer(&layer[1]);

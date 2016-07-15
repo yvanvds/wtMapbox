@@ -8,6 +8,7 @@
 #include "CreateClusters.h"
 #include "MapStyle.h"
 #include "Heatmap.h"
+#include "HeightLines.h"
 
 MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
 {
@@ -18,6 +19,7 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   cb->addItem("Create and style clusters");
   cb->addItem("Change a map's style");
   cb->addItem("Create a heatmap from points");
+  cb->addItem("Height Lines");
   
   cb->setCurrentIndex(0);
   cb->setMargin(10);
@@ -28,6 +30,7 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   stack->addWidget(new CreateClusters());
   stack->addWidget(new MapStyle());
   stack->addWidget(new Heatmap());
+  stack->addWidget(new HeightLines());
 
   cb->changed().connect(std::bind([=]() {
     int choice = cb->currentIndex();

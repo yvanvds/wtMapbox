@@ -39,12 +39,12 @@ MapStyle::MapStyle()
 
   group->checkedChanged().connect(std::bind([=](Wt::WRadioButton * selection) {
     switch (group->id(selection)) {
-      case 1: APP->getMap()->setMapStyle(MapBox::MAPSTYLE_STREETS); break;
-      case 2: APP->getMap()->setMapStyle(MapBox::MAPSTYLE_OUTDOORS); break;
-      case 3: APP->getMap()->setMapStyle(MapBox::MAPSTYLE_LIGHT); break;
-      case 4: APP->getMap()->setMapStyle(MapBox::MAPSTYLE_DARK); break;
-      case 5: APP->getMap()->setMapStyle(MapBox::MAPSTYLE_SATELLITE); break;
-      case 6: APP->getMap()->setMapStyle(MapBox::MAPSTYLE_SATELLITE_STREETS); break;
+      case 1: APP->getMap()->setMapStyle(MapBox::MAPSTYLE::Streets); break;
+      case 2: APP->getMap()->setMapStyle(MapBox::MAPSTYLE::Outdoors); break;
+      case 3: APP->getMap()->setMapStyle(MapBox::MAPSTYLE::Light); break;
+      case 4: APP->getMap()->setMapStyle(MapBox::MAPSTYLE::Dark); break;
+      case 5: APP->getMap()->setMapStyle(MapBox::MAPSTYLE::Satellite); break;
+      case 6: APP->getMap()->setMapStyle(MapBox::MAPSTYLE::SatelliteStreets); break;
     }
   }, std::placeholders::_1));
 }

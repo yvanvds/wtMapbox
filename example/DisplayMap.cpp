@@ -8,7 +8,7 @@ DisplayMap::DisplayMap()
 }
 
 void DisplayMap::onShow() {
-  APP->getMap()->setMapStyle(MapBox::MAPSTYLE_STREETS);
+  APP->getMap()->setMapStyle(MapBox::MAPSTYLE::Streets);
 }
 void DisplayMap::onHide() {
 
