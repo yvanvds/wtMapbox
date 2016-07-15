@@ -86,7 +86,7 @@ namespace MapBox {
   }
 
   std::string ToScript(C Coordinate & value) {
-    return "[" + std::to_string(value.latitude()) + ", " + std::to_string(value.longitude()) + "]";
+    return "[" + std::to_string(value.longitude()) + ", " + std::to_string(value.latitude()) + "]";
   }
 
   std::string ToScript(C Wt::WColor & value) {

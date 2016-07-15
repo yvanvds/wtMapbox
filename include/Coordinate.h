@@ -55,6 +55,10 @@ namespace MapBox {
     double lat_, lon_;
   };
 
+  struct Bounds {
+    Coordinate leftDown, rightUp;
+  };
+
 #ifndef WT_TARGET_JAVA
   extern std::istream& operator>> (std::istream& i, Coordinate& coordinate);
 #endif

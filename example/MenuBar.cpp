@@ -10,6 +10,7 @@
 #include "Heatmap.h"
 #include "HeightLines.h"
 #include "RasterTiles.h"
+#include "FitBounds.h"
 
 MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
 {
@@ -22,6 +23,7 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   cb->addItem("Create a heatmap from points");
   cb->addItem("Height Lines");
   cb->addItem("Raster Tiles");
+  cb->addItem("Fit to Bounds");
   
   cb->setCurrentIndex(0);
   cb->setMargin(10);
@@ -34,6 +36,7 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   stack->addWidget(new Heatmap());
   stack->addWidget(new HeightLines());
   stack->addWidget(new RasterTiles());
+  stack->addWidget(new FitBounds());
 
   cb->changed().connect(std::bind([=]() {
     int choice = cb->currentIndex();

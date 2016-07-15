@@ -54,6 +54,8 @@ namespace MapBox {
 
     void easeTo(const Coordinate & destination, int zoom = -1, int duration = -1);
     void flyTo(const Coordinate & destination, int zoom = -1, float curve = 1.42, float speed = 1.2);
+    void fitBounds(C Bounds & bounds, bool linear = false, int padding = 0, int maxZoom = -1);
+
 
     /* Replaces the map's style object with a new value. This is an URL string. Refer
        to mapbox api for syntax or use one of the predefined styles above.

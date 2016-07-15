@@ -1,6 +1,7 @@
 #include "Map.h"
 #include "Coordinate.h"
 #include "BackgroundLayer.h"
+#include "Conversions.h"
 
 
 
@@ -199,6 +200,41 @@ namespace MapBox {
     stream << ", curve: " << curve;
     stream << ", speed: " << speed;
     stream << "});\n";
+
+    doGmJavaScript(stream.str());
+  }
+
+  void Map::fitBounds(C Bounds & bounds, bool linear, int padding, int maxZoom)
+  {
+    std::stringstream stream;
+    stream << jsRef() + ".map.fitBounds(["
+      << ToScript(bounds.leftDown) << ", "
+      << ToScript(bounds.rightUp) << "]";
+
+    if (linear == true || padding != 0 || maxZoom != -1) {
+      stream << ", { ";
+      bool isFirst = true;
+      
+      if (linear == true) {
+        stream << "linear: true";
+        isFirst = false;
+      }
+
+      if (padding != 0) {
+        if (!isFirst) stream << ", ";
+        stream << "padding: " << padding;
+        isFirst = false;
+      }
+
+      if (maxZoom != -1) {
+        if (!isFirst) stream << ", ";
+        stream << "maxZoom: " << maxZoom;
+      }
+
+      stream << "}";
+    }
+
+    stream << ");";
 
     doGmJavaScript(stream.str());
   }
