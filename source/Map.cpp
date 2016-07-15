@@ -26,6 +26,9 @@ namespace MapBox {
     const std::string mbguri = "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v1.0.0/mapbox-gl-geocoder.js";
     app->require(mbguri, "mapboxgeocoder");
     app->useStyleSheet(Wt::WCssStyleSheet(Wt::WLink("https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v1.0.0/mapbox-gl-geocoder.css")));
+
+    const std::string supported = "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-supported/v0.0.1/mapbox-gl-supported.js";
+    app->require(supported, "mapboxsupported");
   }
 
 
@@ -51,16 +54,17 @@ namespace MapBox {
 
       stream
         << "  mapboxgl.accessToken = '" << mapboxKey << "';\n"
-        << "  map = new mapboxgl.Map({\n"
-        << "    container: self,\n"
-        << "    style: 'mapbox://styles/mapbox/streets-v9'\n"
-        << "  });\n";
+        << "  if (!mapboxgl.supported()) {\n"
+        << "    alert('Your browser does not support Mapbox GL');\n"
+        << "  } else {\n"
+        << "    map = new mapboxgl.Map({\n"
+        << "      container: self,\n"
+        << "      style: 'mapbox://styles/mapbox/streets-v9'\n"
+        << "    });\n"
+        << "  }\n";
 
       stream
         << "  self.map = map;\n";
-        //<< "  $(window).bind('resize', function() {\n"
-        //<< "    $('#" << id() << "').css('width', $(window).height());\n"
-        //<< "  });\n";
 
       // event handling
       streamJSListener(clicked_, "click", stream);
@@ -137,7 +141,6 @@ namespace MapBox {
     stream
       << ");\n";
     doGmJavaScript(stream.str());
-    Wt::log(stream.str());
     center_ = coordinate;
   }
 
