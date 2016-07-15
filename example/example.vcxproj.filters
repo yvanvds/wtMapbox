@@ -93,6 +93,9 @@
     <ClCompile Include="HeightLines.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
+    <ClCompile Include="RasterTiles.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -177,6 +180,9 @@
       <Filter>Test Application\demos</Filter>
     </ClInclude>
     <ClInclude Include="HeightLines.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="RasterTiles.h">
       <Filter>Test Application\demos</Filter>
     </ClInclude>
   </ItemGroup>

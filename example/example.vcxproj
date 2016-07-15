@@ -171,6 +171,7 @@
     <ClCompile Include="mapboxApplication.cpp" />
     <ClCompile Include="MapStyle.cpp" />
     <ClCompile Include="MenuBar.cpp" />
+    <ClCompile Include="RasterTiles.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
@@ -204,6 +205,7 @@
     <ClInclude Include="mapboxApplication.h" />
     <ClInclude Include="MapStyle.h" />
     <ClInclude Include="MenuBar.h" />
+    <ClInclude Include="RasterTiles.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>

@@ -9,7 +9,7 @@ namespace MapBox {
     std::stringstream stream;
     stream
       << "'" << id_ << "', { \n"
-      << "  type: 'vector', \n"
+      << "  type: 'raster', \n"
       << "  url: '" << url_ << "', \n"
       << "  tileSize: " << tileSize_ << " \n"
       << "} \n";
