@@ -10,22 +10,22 @@ namespace MapBox {
 
   // predefined mapbox styles
   namespace MAPSTYLE {
-    const std::string Streets = "mapbox://styles/mapbox/streets-v9";
-    const std::string Outdoors = "mapbox://styles/mapbox/outdoors-v9";
-    const std::string Light = "mapbox://styles/mapbox/light-v9";
-    const std::string Dark = "mapbox://styles/mapbox/dark-v9";
-    const std::string Satellite = "mapbox://styles/mapbox/satellite-v9";
-    const std::string SatelliteStreets = "mapbox://styles/mapbox/satellite-streets-v9";
+    const Wt::WString Streets = "mapbox://styles/mapbox/streets-v9";
+    const Wt::WString Outdoors = "mapbox://styles/mapbox/outdoors-v9";
+    const Wt::WString Light = "mapbox://styles/mapbox/light-v9";
+    const Wt::WString Dark = "mapbox://styles/mapbox/dark-v9";
+    const Wt::WString Satellite = "mapbox://styles/mapbox/satellite-v9";
+    const Wt::WString SatelliteStreets = "mapbox://styles/mapbox/satellite-streets-v9";
   }
 
   // interactions
-  const std::string I_SCROLLZOOM = "scrollZoom";
-  const std::string I_BOXZOOM = "boxZoom";
-  const std::string I_DRAGROTATE = "dragRotate";
-  const std::string I_DRAGPAN = "dragPan";
-  const std::string I_KEYBOARD = "keyboard";
-  const std::string I_DOUBLECLICKZOOM = "doubleClickZoom";
-  const std::string I_TOUCHZOOMROTATE = "touchZoomRotate";
+  const Wt::WString I_SCROLLZOOM = "scrollZoom";
+  const Wt::WString I_BOXZOOM = "boxZoom";
+  const Wt::WString I_DRAGROTATE = "dragRotate";
+  const Wt::WString I_DRAGPAN = "dragPan";
+  const Wt::WString I_KEYBOARD = "keyboard";
+  const Wt::WString I_DOUBLECLICKZOOM = "doubleClickZoom";
+  const Wt::WString I_TOUCHZOOMROTATE = "touchZoomRotate";
 
   enum CONTROL_POS {
     TOPRIGHT,
@@ -52,7 +52,7 @@ namespace MapBox {
     Map & resize();
 
     /* set a language (2 letter language code) */
-    Map & language(C std::string & code); C std::string & language() C { return language_; }
+    Map & language(C Wt::WString & code); C Wt::WString & language() C { return language_; }
 
     /* Set a map location */
     Map & center   (C Coordinate & coordinate); C Coordinate & center() C { return center_; }
@@ -64,7 +64,7 @@ namespace MapBox {
     /* Replaces the map's style object with a new value. This is an URL string. Refer
        to mapbox api for syntax or use one of the predefined styles above.
        */
-    Map & setMapStyle(const std::string & style, bool waitForApply = false); C std::string & mapStyle() C { return mapStyle_; }
+    Map & setMapStyle(const Wt::WString & style, bool waitForApply = false); C Wt::WString & mapStyle() C { return mapStyle_; }
 
     /* Once the map is rendered, a style change cannot be done together
        with other changes. Therefore a style change is not applied instantly. Call other mapbox
@@ -85,7 +85,7 @@ namespace MapBox {
 
     // interactions
     // Should be one of I_DRAGPAN, I_BOXZOOM, ...
-    void enableInteraction(const std::string & interaction, bool value);
+    void enableInteraction(const Wt::WString & interaction, bool value);
 
     // sources
     Map & addSource   (Source * source);
@@ -100,25 +100,25 @@ namespace MapBox {
 
   protected:
     virtual void render(Wt::WFlags<Wt::RenderFlag> flags);
-    virtual void doGmJavaScript(const std::string & jscode);
-    virtual void doOnLoadJavaScript(const std::string & jscode);
+    virtual void doGmJavaScript(const Wt::WString & jscode);
+    virtual void doOnLoadJavaScript(const Wt::WString & jscode);
 
-    void streamJSListener(const Wt::JSignal<Coordinate> & signal, std::string signalName, Wt::WStringStream & stream);
+    void streamJSListener(const Wt::JSignal<Coordinate> & signal, Wt::WString signalName, Wt::WStringStream & stream);
 
   private:
     Wt::JSignal<Coordinate> clicked_;
     Wt::JSignal<Coordinate> doubleClicked_;
     Wt::JSignal<Coordinate> * mouseMoved_;
 
-    std::vector<std::string> additions_;
-    std::vector<std::string> onLoadAdditions_;
+    std::vector<Wt::WString> additions_;
+    std::vector<Wt::WString> onLoadAdditions_;
     Coordinate center_;
-    std::string mapStyle_;
+    Wt::WString mapStyle_;
     bool mapStyleChanging_;
     float zoom_;
     int pitch_;
     int bearing_;
-    std::string language_;
+    Wt::WString language_;
 
     std::vector<Layer> layers_;
   };

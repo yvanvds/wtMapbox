@@ -25,7 +25,7 @@ namespace MapBox {
       Icon & optional         (  bool          value  );   bool          optional         () C { return optional_         ; } // If true, text will display without their corresponding icons when the icon collides with other symbols and the text does not. Defaults to false. Requires icon and text.
       Icon & rotationAlignment(  ANCHOR        value  );   ANCHOR        rotationAlignment() C { return rotationAlignment_; } // Orientation of icon when map is rotated. Defaults to viewport.
       Icon & size             (  float         value  );   float         size             () C { return size_             ; } // Scale factor for icon. 1 is original size, 3 triples the size. Defaults to 1.
-      Icon & image            (C std::string & value  ); C std::string & image            () C { return image_            ; } // A string with {tokens} replaced, referencing the data property to pull from.
+      Icon & image            (C Wt::WString & value  ); C Wt::WString & image            () C { return image_            ; } // A string with {tokens} replaced, referencing the data property to pull from.
       Icon & rotate           (  int           degrees);   int           rotate           () C { return rotate_           ; } // Rotates the icon clockwise. Defaults to 0.
       Icon & padding          (  int           pixels );   int           padding          () C { return padding_          ; } // Size of the additional area around the icon bounding box used for detecting symbol collisions. Defaults to 2.
       Icon & keepUpright      (  bool          value  );   bool          keepUpright      () C { return keepUpright_      ; } // If true, the icon may be flipped to prevent it from being rendered upside-down. Defaults to false.
@@ -47,7 +47,7 @@ namespace MapBox {
       bool  allowOverlap_, ignorePlacement_, optional_, keepUpright_;
       int   rotate_, padding_, haloWidth_, haloBlur_; 
       float size_, opacity_;
-      std::string image_;
+      Wt::WString image_;
       Coordinate  offset_, translate_;
       ANCHOR      rotationAlignment_, anchor_;
       Wt::WColor color_, haloColor_;
@@ -63,8 +63,8 @@ namespace MapBox {
       // Layout properties
       Text & pitchAlignment   (  ANCHOR        value  );   ANCHOR        pitchAlignment   () C; // Aligns text to the plane of the viewport or the map when the map is pitched. Matches text-rotation-alignment if unspecified.
       Text & rotationAlignment(  ANCHOR        value  );   ANCHOR        rotationAlignment() C { return rotationAlignment_; } // Orientation of text when map is rotated. Defaults to viewport.
-      Text & label            (C std::string & value  ); C std::string & label            () C { return label_            ; } // Value to use for a text label. Feature properties are specified using tokens like {field_name}.
-      Text & font             (C std::string & value  ); C std::string & font             () C { return font_             ; } // Font stack to use for displaying text. Defaults to Open Sans Regular,Arial Unicode MS Regular.
+      Text & label            (C Wt::WString & value  ); C Wt::WString & label            () C { return label_            ; } // Value to use for a text label. Feature properties are specified using tokens like {field_name}.
+      Text & font             (C Wt::WString & value  ); C Wt::WString & font             () C { return font_             ; } // Font stack to use for displaying text. Defaults to Open Sans Regular,Arial Unicode MS Regular.
       Text & size             (  float         pixels );   float         size             () C { return size_             ; } // Font size. Defaults to 16.
       Text & optional         (  bool          value  );   bool          optional         () C { return optional_         ; } // If true, icons will display without their corresponding text when the text collides with other symbols and the icon does not. Defaults to false.
       Text & maxWidth         (  float         em     );   float         maxWidth         () C { return maxWidth_         ; } // The maximum line width for text wrapping. Defaults to 10.
@@ -98,7 +98,7 @@ namespace MapBox {
       TEXT_ANCHOR textAnchor_;
       TRANSFORM transform_;
       Coordinate offset_, translate_;    
-      std::string label_, font_;
+      Wt::WString label_, font_;
       Wt::WColor color_, haloColor_;
       float size_, maxWidth_, lineHeight_, spacing_, opacity_;
       int maxAngle_, rotate_, padding_, haloWidth_, haloBlur_;

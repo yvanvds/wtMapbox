@@ -7,13 +7,13 @@ namespace MapBox {
 
   int nextLayerID = 0;
 
-  std::string getNextLayerID() {
+  Wt::WString getNextLayerID() {
     std::stringstream stream;
     stream << "maplayer-" << nextLayerID++;
     return stream.str();
   }
 
-  std::string layerToType(LAYERTYPE type) {
+  Wt::WString layerToType(LAYERTYPE type) {
     switch (type) {
       case LAYERTYPE::Background: return "background";
       case LAYERTYPE::Fill      : return "fill";
@@ -47,7 +47,7 @@ namespace MapBox {
     return *this;
   }
 
-  Layer & Layer::setSourceLayer(C std::string & value) {
+  Layer & Layer::setSourceLayer(C Wt::WString & value) {
     slayer_ = value;
     return *this;
   }
@@ -63,7 +63,7 @@ namespace MapBox {
     return *this;
   }
 
-  Layer & Layer::setLayout(const std::string & key, const std::string & value)
+  Layer & Layer::setLayout(const Wt::WString & key, const Wt::WString & value)
   {
     if (parent_ != nullptr) {
       // change the current value of this property
@@ -81,16 +81,16 @@ namespace MapBox {
     return *this;
   }
 
-  std::string Layer::getLayout(const std::string & key) const
+  Wt::WString Layer::getLayout(const Wt::WString & key) const
   {
     auto it = layoutProperties.find(key);
     if (it != layoutProperties.end()) {
       return it->second;
     }
-    return std::string();
+    return Wt::WString();
   }
 
-  Layer & Layer::remLayout(const std::string & key)
+  Layer & Layer::remLayout(const Wt::WString & key)
   {
     auto it = layoutProperties.find(key);
     if (it != layoutProperties.end()) {
@@ -99,7 +99,7 @@ namespace MapBox {
     return *this;
   }
 
-  Layer & Layer::setPaint(const std::string & key, const std::string & value)
+  Layer & Layer::setPaint(const Wt::WString & key, const Wt::WString & value)
   {
     if (parent_ != nullptr) {
       // change the current value of this property
@@ -118,16 +118,16 @@ namespace MapBox {
     return *this;
   }
 
-  std::string Layer::getPaint(const std::string & key) const
+  Wt::WString Layer::getPaint(const Wt::WString & key) const
   {
     auto it = paintProperties.find(key);
     if (it != paintProperties.end()) {
       return it->second;
     }
-    return std::string();
+    return Wt::WString();
   }
 
-  Layer & Layer::remPaint(const std::string & key)
+  Layer & Layer::remPaint(const Wt::WString & key)
   {
     auto it = paintProperties.find(key);
     if (it != paintProperties.end()) {
@@ -168,12 +168,12 @@ namespace MapBox {
     }
   }
 
-  Layer & Layer::setFilter(const std::string & value) {
+  Layer & Layer::setFilter(const Wt::WString & value) {
     filter_ = value;
     return *this;
   }
 
-  std::string Layer::render(Map * parent) {
+  Wt::WString Layer::render(Map * parent) {
     // once we've set a parent, properties can be changed on the rendered map
     parent_ = parent;
 
@@ -184,7 +184,7 @@ namespace MapBox {
       << "  'type': '" << layerToType(type_) << "',\n"
       << "  'source': '" << source_->id() << "',\n";
 
-    if (slayer_.length()) {
+    if (!slayer_.empty()) {
       stream << "  'source-layer': '" << slayer_ << "',\n";
     }
 

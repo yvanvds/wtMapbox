@@ -87,7 +87,7 @@ namespace MapBox {
     return *this;
   }
 
-  SymbolLayer::Icon & SymbolLayer::Icon::image(C std::string & value) {
+  SymbolLayer::Icon & SymbolLayer::Icon::image(C Wt::WString & value) {
     image_ = value;
     parent->setLayout("icon-image", value);
     return *this;
@@ -207,13 +207,13 @@ namespace MapBox {
     return *this;
   }
 
-  SymbolLayer::Text & SymbolLayer::Text::label(C std::string & value) {
+  SymbolLayer::Text & SymbolLayer::Text::label(C Wt::WString & value) {
     label_ = value;
     parent->setLayout("text-field", value);
     return *this;
   }
 
-  SymbolLayer::Text & SymbolLayer::Text::font(C std::string & value) {
+  SymbolLayer::Text & SymbolLayer::Text::font(C Wt::WString & value) {
     font_ = value;
     parent->setLayout("text-font", value);
     return *this;

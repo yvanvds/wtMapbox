@@ -6,7 +6,7 @@ MapBox::VectorSource::VectorSource()
 
 }
 
-std::string MapBox::VectorSource::render()
+Wt::WString MapBox::VectorSource::render()
 {
   std::stringstream stream;
   stream

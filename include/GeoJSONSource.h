@@ -16,14 +16,14 @@ namespace MapBox {
     GeoJSONSource & setCluster(int radius = 50, int maxClusterZoom = -1);
     GeoJSONSource & disableCluster();
 
-    C std::string & url() { return url_; }
+    C Wt::WString & url() { return url_; }
 
     int  maxZoom       () { return maxZoom_       ; }
     bool isCluster     () { return cluster_       ; }
     int  clusterRadius () { return clusterRadius_ ; }
     int  clusterMaxZoom() { return clusterMaxZoom_; }
 
-    virtual std::string render();
+    virtual Wt::WString render();
 
   private:
     

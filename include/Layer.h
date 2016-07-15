@@ -20,22 +20,22 @@ namespace MapBox {
     Layer & setVisible(bool value); bool visible() C;
 
     Layer & setSource(Source * source);
-    Layer & setSourceLayer(C std::string & value);
+    Layer & setSourceLayer(C Wt::WString & value);
     Layer & setZoom  (int min, int max);
-    Layer & setFilter(const std::string & value);
+    Layer & setFilter(const Wt::WString & value);
     
       LAYERTYPE     type() C { return type_; }
-    C std::string & id  () C { return id_  ; }
+    C Wt::WString & id  () C { return id_  ; }
 
-    std::string render(Map * parent);
+    Wt::WString render(Map * parent);
 
-    Layer       & setLayout(C std::string & key, C std::string & value);
-    Layer       & remLayout(C std::string & key);
-    std::string   getLayout(C std::string & key) C;
+    Layer       & setLayout(C Wt::WString & key, C Wt::WString & value);
+    Layer       & remLayout(C Wt::WString & key);
+    Wt::WString   getLayout(C Wt::WString & key) C;
 
-    Layer       & setPaint(C std::string & key, C std::string & value);
-    Layer       & remPaint(C std::string & key); 
-    std::string   getPaint(C std::string & key) C;
+    Layer       & setPaint(C Wt::WString & key, C Wt::WString & value);
+    Layer       & remPaint(C Wt::WString & key); 
+    Wt::WString   getPaint(C Wt::WString & key) C;
     
 
   protected:
@@ -45,18 +45,18 @@ namespace MapBox {
     void addPaintProperties (std::stringstream & stream) C;
 
   private:
-    std::string   id_    ;
+    Wt::WString   id_    ;
     Source      * source_;
     LAYERTYPE     type_  ;
-    std::string   filter_;
-    std::string   slayer_;
+    Wt::WString   filter_;
+    Wt::WString   slayer_;
     Map         * parent_;
 
     int minZoom_;
     int maxZoom_;
 
-    std::map<std::string, std::string> layoutProperties;
-    std::map<std::string, std::string> paintProperties ;
+    std::map<Wt::WString, Wt::WString> layoutProperties;
+    std::map<Wt::WString, Wt::WString> paintProperties ;
   };
 
 } // namespace MapBox

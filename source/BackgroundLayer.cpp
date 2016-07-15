@@ -16,7 +16,7 @@ namespace MapBox {
     return *this;
   }
 
-  BackgroundLayer & BackgroundLayer::pattern(const std::string & value) {
+  BackgroundLayer & BackgroundLayer::pattern(const Wt::WString & value) {
     pattern_ = value;
     setPaint("background-pattern", value);
     return *this;

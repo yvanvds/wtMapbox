@@ -47,14 +47,14 @@ namespace MapBox {
       std::string mapboxKey;
       Wt::WApplication::readConfigurationProperty("mapbox_api_key", mapboxKey);
       
-      std::string initFunction = app->javaScriptClass() + ".init_mapbox_" + id();
+      Wt::WString initFunction = app->javaScriptClass() + ".init_mapbox_" + id();
 
       Wt::WStringStream stream;
       stream
-        << "{ " << initFunction << " = function() {\n"
+        << "{ " << initFunction.toUTF8() << " = function() {\n"
         << "  var self = " << jsRef() << ";\n"
         << "  if (!self) {\n"
-        << "    setTimeout(" << initFunction << ", 0);\n"
+        << "    setTimeout(" << initFunction.toUTF8() << ", 0);\n"
         << "  }\n";
 
       stream
@@ -80,7 +80,7 @@ namespace MapBox {
 
       // additional things
       for (unsigned int i = 0; i < additions_.size(); i++) {
-        stream << additions_[i];
+        stream << additions_[i].toUTF8();
       }
       additions_.clear();
 
@@ -88,16 +88,16 @@ namespace MapBox {
       if (onLoadAdditions_.size()) {
         stream << "map.on('load', function() {\n";
         for (unsigned int i = 0; i < onLoadAdditions_.size(); i++) {
-          stream << onLoadAdditions_[i];
+          stream << onLoadAdditions_[i].toUTF8();
         }
         onLoadAdditions_.clear();
         stream << "});\n";
       }
 
       stream
-        << "  setTimeout(function(){ delete " << initFunction << ";}, 0)};\n"
+        << "  setTimeout(function(){ delete " << initFunction.toUTF8() << ";}, 0)};\n"
         << "}\n"
-        << initFunction << "();\n";
+        << initFunction.toUTF8() << "();\n";
 
       app->doJavaScript(stream.str());
     }
@@ -105,9 +105,9 @@ namespace MapBox {
     Wt::WCompositeWidget::render(flags);
   }
 
-  void Map::doGmJavaScript(const std::string & jscode) {
+  void Map::doGmJavaScript(const Wt::WString & jscode) {
     if (isRendered()) {
-      if(!mapStyleChanging_) doJavaScript(jscode);
+      if(!mapStyleChanging_) doJavaScript(jscode.toUTF8());
       else additions_.push_back(jscode);
     }
     else {
@@ -115,9 +115,9 @@ namespace MapBox {
     }
   }
 
-  void Map::doOnLoadJavaScript(const std::string & jscode) {
+  void Map::doOnLoadJavaScript(const Wt::WString & jscode) {
     if (isRendered()) {
-      if (!mapStyleChanging_) doJavaScript(jscode);
+      if (!mapStyleChanging_) doJavaScript(jscode.toUTF8());
       else additions_.push_back(jscode);
     }
     else {
@@ -168,7 +168,7 @@ namespace MapBox {
     return *this;
   }
 
-  Map & Map::setMapStyle(const std::string & style, bool waitForApply) {
+  Map & Map::setMapStyle(const Wt::WString & style, bool waitForApply) {
     if (isRendered() && waitForApply) {
       mapStyleChanging_ = true;
     }
@@ -180,7 +180,7 @@ namespace MapBox {
   }
 
   Map & Map::applyMapStyle() {
-    doJavaScript(jsRef() + ".map.setStyle('" + mapStyle_ + "');\n");
+    doJavaScript(jsRef() + ".map.setStyle('" + mapStyle_.toUTF8() + "');\n");
     
     if (additions_.size()) {
       std::stringstream stream;
@@ -267,7 +267,7 @@ namespace MapBox {
     return *this;
   }
 
-  std::string getControlPos(CONTROL_POS pos) {
+  Wt::WString getControlPos(CONTROL_POS pos) {
     switch (pos) {
       case TOPRIGHT   : return "top-right"   ;
       case TOPLEFT    : return "top-left"    ;
@@ -315,14 +315,14 @@ namespace MapBox {
     return *mouseMoved_;
   }
 
-  void Map::streamJSListener(const Wt::JSignal<Coordinate> & signal, std::string signalName, Wt::WStringStream & stream) {
+  void Map::streamJSListener(const Wt::JSignal<Coordinate> & signal, Wt::WString signalName, Wt::WStringStream & stream) {
     stream
-      << "map.on('" << signalName << "', function (e) {"
+      << "map.on('" << signalName.toUTF8() << "', function (e) {"
       << signal.createCall("e.lngLat.lat +' '+ e.lngLat.lng") << ";"
       << "});\n";
   }
 
-  void Map::enableInteraction(const std::string & interaction, bool value) {
+  void Map::enableInteraction(const Wt::WString & interaction, bool value) {
     std::stringstream stream;
     if (value) stream << jsRef() + ".map['" << interaction << "'].enable();";
     else       stream << jsRef() + ".map['" << interaction << "'].disable();";
@@ -383,7 +383,7 @@ namespace MapBox {
   }
 
 
-  Map & Map::language(C std::string & code)
+  Map & Map::language(C Wt::WString & code)
   {
     language_ = code;
     std::stringstream stream;

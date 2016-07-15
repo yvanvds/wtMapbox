@@ -11,13 +11,13 @@ namespace MapBox {
   {
   }
 
-  Source & VideoSource::setFromURL(C std::string & url)
+  Source & VideoSource::setFromURL(C Wt::WString & url)
   {
     addUrl(url);
     return *this;
   }
 
-  VideoSource & VideoSource::addUrl(C std::string & url)
+  VideoSource & VideoSource::addUrl(C Wt::WString & url)
   {
     urls.emplace_back(url);
     return *this;
@@ -32,7 +32,7 @@ namespace MapBox {
     return *this;
   }
 
-  std::string VideoSource::render()
+  Wt::WString VideoSource::render()
   {
     std::stringstream stream;
     stream

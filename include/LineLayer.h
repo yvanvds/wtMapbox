@@ -22,7 +22,7 @@ namespace MapBox {
     LineLayer & blur     (int   value); int   blur     () C { return blur_     ; } // Blur applied to the line, in pixels. Defaults to 0.
     LineLayer & dashArray(float value); float dashArray() C { return dashArray_; } // Specifies the lengths of the alternating dashes and gaps that form the dash pattern. The lengths are later scaled by the line width. To convert a dash length to pixels, multiply the length by the current line width. 
 
-    LineLayer & pattern  (C std::string & value); C std::string & pattern() C { return pattern_; } // Name of image in sprite to use for drawing image lines. For seamless patterns, image width must be a factor of two (2, 4, 8, …, 512).
+    LineLayer & pattern  (C Wt::WString & value); C Wt::WString & pattern() C { return pattern_; } // Name of image in sprite to use for drawing image lines. For seamless patterns, image width must be a factor of two (2, 4, 8, …, 512).
     LineLayer & color    (C Wt::WColor  & value); C Wt::WColor  & color  () C { return color_  ; } // The color with which the line will be drawn. Defaults to black.
 
     LineLayer & translate(C Coordinate & offset, ANCHOR anchor = ANCHOR::Map); // The geometry’s offset. Values are [x, y] where negatives indicate left and up, respectively. Anchor controls whether the translation is relative to the map (north) or viewport (screen).
@@ -37,7 +37,7 @@ namespace MapBox {
     ANCHOR     anchor_   ;
     float miterLimit_, roundLimit_, opacity_, dashArray_;
     int width_, gapWidth_, offset_, blur_;
-    std::string pattern_;
+    Wt::WString pattern_;
   };
 
 }

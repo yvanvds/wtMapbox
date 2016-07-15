@@ -7,7 +7,7 @@ namespace MapBox {
   public:
     VectorSource();
 
-    virtual std::string render();
+    virtual Wt::WString render();
 
   };
 

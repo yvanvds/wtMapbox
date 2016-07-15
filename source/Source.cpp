@@ -7,13 +7,13 @@ namespace MapBox {
 
   int nextSourceID = 0;
 
-  std::string getNextSourceID() {
+  Wt::WString getNextSourceID() {
     std::stringstream stream;
     stream << "mapsource-" << nextSourceID++;
     return stream.str();
   }
 
-  std::string typeAsString(SOURCETYPE type) {
+  Wt::WString typeAsString(SOURCETYPE type) {
     switch (type) {
     case SOURCETYPE::Vector : return "vector" ;
     case SOURCETYPE::Raster : return "raster" ;
@@ -30,7 +30,7 @@ namespace MapBox {
 
   }
 
-  Source & Source::setFromURL(const std::string & url) {
+  Source & Source::setFromURL(const Wt::WString & url) {
     url_ = url;
     return *this;
   }

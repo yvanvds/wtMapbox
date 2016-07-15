@@ -4,7 +4,7 @@
 
 namespace MapBox {
 
-  std::string RasterSource::render()
+  Wt::WString RasterSource::render()
   {
     std::stringstream stream;
     stream

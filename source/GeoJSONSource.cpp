@@ -29,7 +29,7 @@ namespace MapBox {
     return *this;
   }
 
-  std::string GeoJSONSource::render() {
+  Wt::WString GeoJSONSource::render() {
     std::stringstream stream;
     stream
       << "'" << id_ << "', {\n"

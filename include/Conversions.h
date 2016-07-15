@@ -8,21 +8,21 @@ namespace MapBox {
   // helper functions to get values to javascript
 
   // basic types
-  std::string ToScript(bool value);
-  std::string ToScript(int value);
-  std::string ToScript(float value);
+  Wt::WString ToScript(bool value);
+  Wt::WString ToScript(int value);
+  Wt::WString ToScript(float value);
 
   // enums
-  std::string ToScript(ANCHOR value);
-  std::string ToScript(CAP value);
-  std::string ToScript(JOIN value);
-  std::string ToScript(PLACEMENT value);
-  std::string ToScript(JUSTIFY value);
-  std::string ToScript(TEXT_ANCHOR value);
-  std::string ToScript(TRANSFORM value);
+  Wt::WString ToScript(ANCHOR value);
+  Wt::WString ToScript(CAP value);
+  Wt::WString ToScript(JOIN value);
+  Wt::WString ToScript(PLACEMENT value);
+  Wt::WString ToScript(JUSTIFY value);
+  Wt::WString ToScript(TEXT_ANCHOR value);
+  Wt::WString ToScript(TRANSFORM value);
 
   // classes
-  std::string ToScript(C Coordinate & value);
-  std::string ToScript(C Wt::WColor & value);
+  Wt::WString ToScript(C Coordinate & value);
+  Wt::WString ToScript(C Wt::WColor & value);
 
 }

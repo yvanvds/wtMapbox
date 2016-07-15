@@ -11,7 +11,7 @@ namespace MapBox {
 
     ImageSource & coordinates(C Coordinate & topLeft, C Coordinate & topRight, C Coordinate & bottomRight, C Coordinate & bottomLeft);
 
-    virtual std::string render();
+    virtual Wt::WString render();
 
   private:
     Coordinate topLeft, topRight, bottomRight, bottomLeft;

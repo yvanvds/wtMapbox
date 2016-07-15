@@ -8,15 +8,15 @@ namespace MapBox {
   public:
     VideoSource();
 
-    virtual Source & setFromURL(C std::string & url); // Inherited from Source. Video uses more sources and you should use the addURL method instead.
-    VideoSource & addUrl(C std::string & url);
+    virtual Source & setFromURL(C Wt::WString & url); // Inherited from Source. Video uses more sources and you should use the addURL method instead.
+    VideoSource & addUrl(C Wt::WString & url);
     VideoSource & coordinates(C Coordinate & topLeft, C Coordinate & topRight, C Coordinate & bottomRight, C Coordinate & bottomLeft);
 
-    virtual std::string render();
+    virtual Wt::WString render();
 
   private:
     Coordinate topLeft, topRight, bottomRight, bottomLeft;
-    std::vector<std::string> urls;
+    std::vector<Wt::WString> urls;
   };
 
 }

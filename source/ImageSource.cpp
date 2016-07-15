@@ -16,7 +16,7 @@ namespace MapBox {
     return *this;
   }
 
-  std::string ImageSource::render()
+  Wt::WString ImageSource::render()
   {
     std::stringstream stream;
     stream

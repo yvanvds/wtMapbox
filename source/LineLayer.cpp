@@ -94,7 +94,7 @@ namespace MapBox {
     return *this;
   }
 
-  LineLayer & LineLayer::pattern(const std::string & value)
+  LineLayer & LineLayer::pattern(const Wt::WString & value)
   {
     pattern_ = value;
     setPaint("line-pattern", value);
