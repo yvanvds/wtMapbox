@@ -12,7 +12,10 @@ namespace MapBox {
     , doubleClicked_(this, "dblclick")
     , mouseMoved_(nullptr)
     , mapStyleChanging_(false)
+    , pitch_(0)
+    , bearing_(0)
     , language_("en")
+    
   {
     setImplementation(new Wt::WContainerWidget());
     if (parent) parent->addWidget(this);
@@ -127,6 +130,22 @@ namespace MapBox {
     stream << jsRef() << ".map.setZoom(" << level << ");\n";
     doGmJavaScript(stream.str());
     zoom_ = level;
+    return *this;
+  }
+
+  Map & Map::bearing(int degrees) {
+    std::stringstream stream;
+    stream << jsRef() << ".map.setBearing(" << degrees << ");";
+    doGmJavaScript(stream.str());
+    bearing_ = degrees;
+    return *this;
+  }
+
+  Map & Map::pitch(int degrees) {
+    std::stringstream stream;
+    stream << jsRef() << ".map.setPitch(" << degrees << ");";
+    doGmJavaScript(stream.str());
+    pitch_ = degrees;
     return *this;
   }
 

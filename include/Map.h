@@ -44,6 +44,11 @@ namespace MapBox {
 
     /* Set a map zoom */
     Map & zoom(float level);   float zoom() C { return zoom_; }
+    /* Sets the maps' bearing, measured in degrees counter-clokwise from north.*/
+    Map & bearing(int degrees); int bearing() C { return bearing_; }
+    /* Sets the maps' pitch (tilt) measured in degrees away from the plane of the screen (0-60) */
+    Map & pitch(int degrees); int pitch() C { return pitch_; }
+
     Map & resize();
 
     /* set a language (2 letter language code) */
@@ -108,6 +113,8 @@ namespace MapBox {
     std::string mapStyle_;
     bool mapStyleChanging_;
     float zoom_;
+    int pitch_;
+    int bearing_;
     std::string language_;
 
     std::vector<Layer> layers_;
