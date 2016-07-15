@@ -99,6 +99,9 @@
     <ClCompile Include="FitBounds.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
+    <ClCompile Include="SetLanguage.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -189,6 +192,9 @@
       <Filter>Test Application\demos</Filter>
     </ClInclude>
     <ClInclude Include="FitBounds.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="SetLanguage.h">
       <Filter>Test Application\demos</Filter>
     </ClInclude>
   </ItemGroup>

@@ -42,55 +42,53 @@ namespace MapBox {
     Map(Wt::WContainerWidget * parent = 0);
     virtual ~Map();
 
-    /* Set a map location */
-    void setCenter(const Coordinate & coordinate);
-    const Coordinate & center() { return center_; }
-
     /* Set a map zoom */
-    void setZoom(int level);
-    int zoom() { return zoom_; }
+    Map & zoom(float level);   float zoom() C { return zoom_; }
+    Map & resize();
 
-    void resize();
+    /* set a language (2 letter language code) */
+    Map & language(C std::string & code); C std::string & language() C { return language_; }
 
-    void easeTo(const Coordinate & destination, int zoom = -1, int duration = -1);
-    void flyTo(const Coordinate & destination, int zoom = -1, float curve = 1.42, float speed = 1.2);
-    void fitBounds(C Bounds & bounds, bool linear = false, int padding = 0, int maxZoom = -1);
+    /* Set a map location */
+    Map & center   (C Coordinate & coordinate); C Coordinate & center() C { return center_; }
+    Map & easeTo   (C Coordinate & destination, int  zoom   = -1   , int   duration = -1                        );
+    Map & flyTo    (C Coordinate & destination, int  zoom   = -1   , float curve    = 1.42, float speed   =  1.2);
+    Map & fitBounds(C Bounds     & bounds     , bool linear = false, int   padding  = 0   , int   maxZoom = -1  );
 
 
     /* Replaces the map's style object with a new value. This is an URL string. Refer
        to mapbox api for syntax or use one of the predefined styles above.
        */
-    void setMapStyle(const std::string & style, bool waitForApply = false);
-    const std::string & mapStyle() { return mapStyle_; }
+    Map & setMapStyle(const std::string & style, bool waitForApply = false); C std::string & mapStyle() C { return mapStyle_; }
 
     /* Once the map is rendered, a style change cannot be done together
        with other changes. Therefore a style change is not applied instantly. Call other mapbox
        methods after you've set the style, and add this method as the last one.
     */
-    void applyMapStyle();
+    Map & applyMapStyle();
 
     // controls
-    void addNavigationControl (CONTROL_POS pos = TOPRIGHT  );
-    void addGeoLocateControl  (CONTROL_POS pos = TOPLEFT   );
-    void addAttributionControl(CONTROL_POS pos = BOTTOMLEFT);
-    void addGeoCoderControl();
+    Map & addNavigationControl (CONTROL_POS pos = TOPRIGHT  );
+    Map & addGeoLocateControl  (CONTROL_POS pos = TOPLEFT   );
+    Map & addAttributionControl(CONTROL_POS pos = BOTTOMLEFT);
+    Map & addGeoCoderControl   ();
 
     // events
-    Wt::JSignal<Coordinate> & clicked() { return clicked_; }
+    Wt::JSignal<Coordinate> & clicked      () { return clicked_      ; }
     Wt::JSignal<Coordinate> & doubleClicked() { return doubleClicked_; }
-    Wt::JSignal<Coordinate> & mouseMoved();
+    Wt::JSignal<Coordinate> & mouseMoved   ();
 
     // interactions
     // Should be one of I_DRAGPAN, I_BOXZOOM, ...
     void enableInteraction(const std::string & interaction, bool value);
 
     // sources
-    void addSource(Source * source);
-    void removeSource(Source * source);
+    Map & addSource   (Source * source);
+    Map & removeSource(Source * source);
 
     // layers
-    void addLayer(Layer * layer);
-    void removeLayer(Layer * layer);
+    Map & addLayer   (Layer * layer);
+    Map & removeLayer(Layer * layer);
 
   protected:
     virtual void render(Wt::WFlags<Wt::RenderFlag> flags);
@@ -109,7 +107,8 @@ namespace MapBox {
     Coordinate center_;
     std::string mapStyle_;
     bool mapStyleChanging_;
-    int zoom_;
+    float zoom_;
+    std::string language_;
 
     std::vector<Layer> layers_;
   };

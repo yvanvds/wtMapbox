@@ -13,15 +13,12 @@ RasterTiles::RasterTiles()
 
 void RasterTiles::onShow()
 {
-  APP->getMap()->addSource(&source);
-  APP->getMap()->addLayer(&layer);
-  APP->getMap()->setCenter(MapBox::Coordinate(40, -74.5));
-  APP->getMap()->setZoom(2);
+  APP->getMap()->addSource(&source).addLayer(&layer);
+  APP->getMap()->center(MapBox::Coordinate(40, -74.5)).zoom(2);
 }
 
 void RasterTiles::onHide()
 {
-  APP->getMap()->removeSource(&source);
-  APP->getMap()->removeLayer(&layer);
+  APP->getMap()->removeSource(&source).removeLayer(&layer);
 }
 

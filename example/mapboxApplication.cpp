@@ -18,8 +18,7 @@ mapboxApplication::mapboxApplication(const WEnvironment & env) : WApplication(en
   mainContent->setStyleClass("examplemap");
   map = new MapBox::Map(mainContent);
   map->setMapStyle(MapBox::MAPSTYLE::Streets);
-  map->setZoom(14);
-  map->setCenter(MapBox::Coordinate(51.515823, -0.124331));
+  map->zoom(14).center(MapBox::Coordinate(51.515823, -0.124331));
 
   // add all controls
   map->addNavigationControl();

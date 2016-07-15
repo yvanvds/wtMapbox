@@ -12,6 +12,7 @@ namespace MapBox {
     , doubleClicked_(this, "dblclick")
     , mouseMoved_(nullptr)
     , mapStyleChanging_(false)
+    , language_("en")
   {
     setImplementation(new Wt::WContainerWidget());
     if (parent) parent->addWidget(this);
@@ -121,20 +122,22 @@ namespace MapBox {
     }
   }
 
-  void Map::setZoom(int level) {
+  Map & Map::zoom(float level) {
     std::stringstream stream;
     stream << jsRef() << ".map.setZoom(" << level << ");\n";
     doGmJavaScript(stream.str());
     zoom_ = level;
+    return *this;
   }
 
-  void Map::resize() {
+  Map & Map::resize() {
     std::stringstream stream;
     stream << jsRef() << ".map.resize();\n";
     doGmJavaScript(stream.str());
+    return *this;
   }
 
-  void Map::setCenter(const Coordinate & coordinate) {
+  Map & Map::center(const Coordinate & coordinate) {
     std::stringstream stream;
     stream
       << jsRef() + ".map.setCenter(";
@@ -143,9 +146,10 @@ namespace MapBox {
       << ");\n";
     doGmJavaScript(stream.str());
     center_ = coordinate;
+    return *this;
   }
 
-  void Map::setMapStyle(const std::string & style, bool waitForApply) {
+  Map & Map::setMapStyle(const std::string & style, bool waitForApply) {
     if (isRendered() && waitForApply) {
       mapStyleChanging_ = true;
     }
@@ -153,9 +157,10 @@ namespace MapBox {
       doGmJavaScript(jsRef() + ".map.setStyle('" + style + "');\n");
     }   
     mapStyle_ = style;
+    return *this;
   }
 
-  void Map::applyMapStyle() {
+  Map & Map::applyMapStyle() {
     doJavaScript(jsRef() + ".map.setStyle('" + mapStyle_ + "');\n");
     
     if (additions_.size()) {
@@ -169,9 +174,10 @@ namespace MapBox {
       doJavaScript(stream.str());
     }
     mapStyleChanging_ = false;
+    return *this;
   }
 
-  void Map::easeTo(const Coordinate & destination, int zoom, int duration) {
+  Map & Map::easeTo(const Coordinate & destination, int zoom, int duration) {
     std::stringstream stream;
     stream << jsRef() + ".map.easeTo({ center: ";
     Coordinate::write(stream, destination);
@@ -186,9 +192,10 @@ namespace MapBox {
     stream << "});\n";
 
     doGmJavaScript(stream.str());
+    return *this;
   }
 
-  void Map::flyTo(const Coordinate & destination, int zoom, float curve, float speed) {
+  Map & Map::flyTo(const Coordinate & destination, int zoom, float curve, float speed) {
     std::stringstream stream;
     stream << jsRef() + ".map.flyTo({ center: ";
     Coordinate::write(stream, destination);
@@ -202,9 +209,10 @@ namespace MapBox {
     stream << "});\n";
 
     doGmJavaScript(stream.str());
+    return *this;
   }
 
-  void Map::fitBounds(C Bounds & bounds, bool linear, int padding, int maxZoom)
+  Map & Map::fitBounds(C Bounds & bounds, bool linear, int padding, int maxZoom)
   {
     std::stringstream stream;
     stream << jsRef() + ".map.fitBounds(["
@@ -237,6 +245,7 @@ namespace MapBox {
     stream << ");";
 
     doGmJavaScript(stream.str());
+    return *this;
   }
 
   std::string getControlPos(CONTROL_POS pos) {
@@ -248,33 +257,36 @@ namespace MapBox {
     }
   }
 
-  void Map::addNavigationControl(CONTROL_POS pos) {
+  Map & Map::addNavigationControl(CONTROL_POS pos) {
     std::stringstream stream;
     stream << jsRef() + ".map.addControl(new mapboxgl.Navigation());\n";
     doGmJavaScript(stream.str());
+    return *this;
   }
 
-  void Map::addGeoLocateControl(CONTROL_POS pos) {
+  Map & Map::addGeoLocateControl(CONTROL_POS pos) {
     std::stringstream stream;
     stream << jsRef() + ".map.addControl(new mapboxgl.Geolocate({ position: '";
     stream << getControlPos(pos);
     stream << "' }));\n";
     doGmJavaScript(stream.str());
+    return *this;
   }
 
-  void Map::addAttributionControl(CONTROL_POS pos) {
+  Map & Map::addAttributionControl(CONTROL_POS pos) {
     std::stringstream stream;
     stream << jsRef() + ".map.addControl(new mapboxgl.Attribution({ position: '";
     stream << getControlPos(pos);
     stream << "' }));\n";
     doGmJavaScript(stream.str());
+    return *this;
   }
 
-  void Map::addGeoCoderControl() {
+  Map & Map::addGeoCoderControl() {
     std::stringstream stream;
     stream << jsRef() + ".map.addControl(new mapboxgl.Geocoder());\n";
     doGmJavaScript(stream.str());
-
+    return *this;
   }
 
   Wt::JSignal<Coordinate> & Map::mouseMoved() {
@@ -299,15 +311,16 @@ namespace MapBox {
     doGmJavaScript(stream.str());
   }
 
-  void Map::addSource(Source * source) {
+  Map & Map::addSource(Source * source) {
     std::stringstream stream;
     stream << jsRef() + ".map.addSource(";
     stream << source->render();
     stream << ");\n";
     doOnLoadJavaScript(stream.str());
+    return *this;
   }
 
-  void Map::removeSource(Source * source)
+  Map & Map::removeSource(Source * source)
   {
     std::stringstream stream;
     stream << "try {\n";
@@ -316,17 +329,19 @@ namespace MapBox {
     stream <<   "');\n";
     stream << "} catch(err) {}\n"; // error when the source does not exist. This can be ignored.
     doOnLoadJavaScript(stream.str());
+    return *this;
   }
 
-  void Map::addLayer(Layer * layer) {
+  Map & Map::addLayer(Layer * layer) {
     std::stringstream stream;
     stream << jsRef() + ".map.addLayer(\n";
     stream << layer->render(this);
     stream << ");\n";
     doOnLoadJavaScript(stream.str());
+    return *this;
   }
 
-  void Map::removeLayer(Layer * layer)
+  Map & Map::removeLayer(Layer * layer)
   {
     std::stringstream stream;
     stream << "try {\n";
@@ -335,6 +350,17 @@ namespace MapBox {
     stream <<   "');\n";
     stream << "} catch(err) {}\n"; // error when the layer does not exist. This can be ignored.
     doOnLoadJavaScript(stream.str());
+    return *this;
+  }
+
+  Map & Map::language(C std::string & code)
+  {
+    language_ = code;
+    std::stringstream stream;
+    // todo: can't find any documentation about supported languages or labels
+    stream << jsRef() + ".map.setLayoutProperty('country-label-lg', 'text-field', '{name_" << code << "}');";
+    doGmJavaScript(stream.str());   
+    return *this;
   }
 
 } // namespace MapBox
