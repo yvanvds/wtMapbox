@@ -7,9 +7,10 @@
 namespace MapBox {
 
   Map::Map(Wt::WContainerWidget * parent)
-    : clicked_(this, "click"),
-    doubleClicked_(this, "dblclick"),
-    mouseMoved_(nullptr)
+    : clicked_(this, "click")
+    , doubleClicked_(this, "dblclick")
+    , mouseMoved_(nullptr)
+    , mapStyleChanging_(false)
   {
     setImplementation(new Wt::WContainerWidget());
     if (parent) parent->addWidget(this);
@@ -97,7 +98,8 @@ namespace MapBox {
 
   void Map::doGmJavaScript(const std::string & jscode) {
     if (isRendered()) {
-      doJavaScript(jscode);
+      if(!mapStyleChanging_) doJavaScript(jscode);
+      else additions_.push_back(jscode);
     }
     else {
       additions_.push_back(jscode);
@@ -106,7 +108,8 @@ namespace MapBox {
 
   void Map::doOnLoadJavaScript(const std::string & jscode) {
     if (isRendered()) {
-      doJavaScript(jscode);
+      if (!mapStyleChanging_) doJavaScript(jscode);
+      else additions_.push_back(jscode);
     }
     else {
       onLoadAdditions_.push_back(jscode);
@@ -138,9 +141,30 @@ namespace MapBox {
     center_ = coordinate;
   }
 
-  void Map::setMapStyle(const std::string & style) {
-    doGmJavaScript(jsRef() + ".map.setStyle('" + style + "');\n");
+  void Map::setMapStyle(const std::string & style, bool waitForApply) {
+    if (isRendered() && waitForApply) {
+      mapStyleChanging_ = true;
+    }
+    else {
+      doGmJavaScript(jsRef() + ".map.setStyle('" + style + "');\n");
+    }   
     mapStyle_ = style;
+  }
+
+  void Map::applyMapStyle() {
+    doJavaScript(jsRef() + ".map.setStyle('" + mapStyle_ + "');\n");
+    
+    if (additions_.size()) {
+      std::stringstream stream;
+      stream << "map.style.on('load', function() {\n";
+      for (unsigned int i = 0; i < additions_.size(); i++) {
+        stream << additions_[i];
+      }
+      additions_.clear();
+      stream << "});\n";
+      doJavaScript(stream.str());
+    }
+    mapStyleChanging_ = false;
   }
 
   void Map::easeTo(const Coordinate & destination, int zoom, int duration) {

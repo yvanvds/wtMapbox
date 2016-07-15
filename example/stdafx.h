@@ -13,5 +13,8 @@
 #include <Wt/WCheckBox>
 #include <Wt/WColor>
 #include <Wt/WSlider>
+#include <Wt/WStackedWidget>
+#include <Wt/WButtonGroup>
+#include <Wt/WRadioButton>
 
 #define APP ((mapboxApplication*)Wt::WApplication::instance())

@@ -13,6 +13,9 @@
     <Filter Include="wtMapbox\Source">
       <UniqueIdentifier>{b285de37-dab5-4a2c-86ba-83e5afcc2636}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Test Application\demos">
+      <UniqueIdentifier>{a7e17b8e-a313-477b-8a7d-51ae4c9b1306}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -74,6 +77,18 @@
     </ClCompile>
     <ClCompile Include="..\source\VideoSource.cpp">
       <Filter>wtMapbox\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateClusters.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="DisplayMap.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="MapStyle.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="Heatmap.cpp">
+      <Filter>Test Application\demos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +157,21 @@
     </ClInclude>
     <ClInclude Include="..\include\VideoSource.h">
       <Filter>wtMapbox\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateClusters.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="Demo.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayMap.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="MapStyle.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="Heatmap.h">
+      <Filter>Test Application\demos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

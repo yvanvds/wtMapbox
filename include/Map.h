@@ -56,8 +56,14 @@ namespace MapBox {
     /* Replaces the map's style object with a new value. This is an URL string. Refer
        to mapbox api for syntax or use one of the predefined styles above.
        */
-    void setMapStyle(const std::string & style);
+    void setMapStyle(const std::string & style, bool waitForApply = false);
     const std::string & mapStyle() { return mapStyle_; }
+
+    /* Once the map is rendered, a style change cannot be done together
+       with other changes. Therefore a style change is not applied instantly. Call other mapbox
+       methods after you've set the style, and add this method as the last one.
+    */
+    void applyMapStyle();
 
     // controls
     void addNavigationControl (CONTROL_POS pos = TOPRIGHT  );
@@ -98,6 +104,7 @@ namespace MapBox {
     std::vector<std::string> onLoadAdditions_;
     Coordinate center_;
     std::string mapStyle_;
+    bool mapStyleChanging_;
     int zoom_;
 
     std::vector<Layer> layers_;
