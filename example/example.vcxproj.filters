@@ -108,6 +108,9 @@
     <ClCompile Include="ChangeColors.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
+    <ClCompile Include="LayerOrder.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -209,8 +212,15 @@
     <ClInclude Include="ChangeColors.h">
       <Filter>Test Application\demos</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="LayerOrder.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\bin\wtMapExample.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="example.rc" />
   </ItemGroup>
 </Project>

@@ -91,8 +91,8 @@ namespace MapBox {
     Map & addSource   (Source * source);
     Map & removeSource(Source * source);
 
-    // layers
-    Map & addLayer   (Layer * layer);
+    // Add a layer to the map. The new layer will be displayed on top of all existing layers, unless a layer name is specified as second argument.
+    Map & addLayer   (Layer * layer, C Wt::WString & before = Wt::WString());
     Map & removeLayer(Layer * layer);
 
     // modify properties

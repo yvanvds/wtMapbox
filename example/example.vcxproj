@@ -169,6 +169,7 @@
     <ClCompile Include="FitBounds.cpp" />
     <ClCompile Include="Heatmap.cpp" />
     <ClCompile Include="HeightLines.cpp" />
+    <ClCompile Include="LayerOrder.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mapboxApplication.cpp" />
     <ClCompile Include="MapStyle.cpp" />
@@ -208,16 +209,21 @@
     <ClInclude Include="Demo.h" />
     <ClInclude Include="DisplayMap.h" />
     <ClInclude Include="Heatmap.h" />
+    <ClInclude Include="LayerOrder.h" />
     <ClInclude Include="mapboxApplication.h" />
     <ClInclude Include="MapStyle.h" />
     <ClInclude Include="MenuBar.h" />
     <ClInclude Include="PitchAndBearing.h" />
     <ClInclude Include="RasterTiles.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="SetLanguage.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\bin\wtMapExample.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="example.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -351,10 +351,13 @@ namespace MapBox {
     return *this;
   }
 
-  Map & Map::addLayer(Layer * layer) {
+  Map & Map::addLayer(Layer * layer, C Wt::WString & before) {
     std::stringstream stream;
     stream << jsRef() + ".map.addLayer(\n";
     stream << layer->render(this);
+    if (!before.empty()) {
+      stream << ", '" << before << "'";
+    }
     stream << ");\n";
     doOnLoadJavaScript(stream.str());
     return *this;

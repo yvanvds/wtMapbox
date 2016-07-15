@@ -14,6 +14,7 @@
 #include "SetLanguage.h"
 #include "PitchAndBearing.h"
 #include "ChangeColors.h"
+#include "LayerOrder.h"
 
 MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
 {
@@ -30,6 +31,7 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   cb->addItem("Set Language");
   cb->addItem("Pitch and Bearing");
   cb->addItem("Change map colors");
+  cb->addItem("Layer Order");
   
   cb->setCurrentIndex(0);
   cb->setMargin(10);
@@ -46,6 +48,7 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   stack->addWidget(new SetLanguage());
   stack->addWidget(new PitchAndBearing());
   stack->addWidget(new ChangeColors());
+  stack->addWidget(new LayerOrder());
 
   cb->changed().connect(std::bind([=]() {
     int choice = cb->currentIndex();
