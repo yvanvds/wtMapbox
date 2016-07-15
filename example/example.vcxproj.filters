@@ -105,6 +105,9 @@
     <ClCompile Include="PitchAndBearing.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
+    <ClCompile Include="ChangeColors.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -201,6 +204,9 @@
       <Filter>Test Application\demos</Filter>
     </ClInclude>
     <ClInclude Include="PitchAndBearing.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeColors.h">
       <Filter>Test Application\demos</Filter>
     </ClInclude>
   </ItemGroup>

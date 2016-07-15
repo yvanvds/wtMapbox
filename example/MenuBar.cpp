@@ -13,6 +13,7 @@
 #include "FitBounds.h"
 #include "SetLanguage.h"
 #include "PitchAndBearing.h"
+#include "ChangeColors.h"
 
 MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
 {
@@ -28,6 +29,7 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   cb->addItem("Fit to Bounds");
   cb->addItem("Set Language");
   cb->addItem("Pitch and Bearing");
+  cb->addItem("Change map colors");
   
   cb->setCurrentIndex(0);
   cb->setMargin(10);
@@ -43,6 +45,7 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   stack->addWidget(new FitBounds());
   stack->addWidget(new SetLanguage());
   stack->addWidget(new PitchAndBearing());
+  stack->addWidget(new ChangeColors());
 
   cb->changed().connect(std::bind([=]() {
     int choice = cb->currentIndex();

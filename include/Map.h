@@ -95,6 +95,9 @@ namespace MapBox {
     Map & addLayer   (Layer * layer);
     Map & removeLayer(Layer * layer);
 
+    // modify properties
+    Map & setPaintProperty(C Wt::WString & layer, C Wt::WString & _property, C Wt::WString & value);
+
   protected:
     virtual void render(Wt::WFlags<Wt::RenderFlag> flags);
     virtual void doGmJavaScript(const std::string & jscode);

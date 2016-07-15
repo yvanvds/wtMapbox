@@ -372,6 +372,17 @@ namespace MapBox {
     return *this;
   }
 
+  Map & Map::setPaintProperty(C Wt::WString & layer, C Wt::WString & _property, C Wt::WString & value) {
+    std::stringstream stream;
+    stream << jsRef() + ".map.setPaintProperty('"
+      << layer << "', '" << _property << "', '"
+      << value << "');";
+    doGmJavaScript(stream.str());
+    Wt::log(stream.str());
+    return *this;
+  }
+
+
   Map & Map::language(C std::string & code)
   {
     language_ = code;
