@@ -136,6 +136,9 @@
     <ClCompile Include="DisplayPopup.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
+    <ClCompile Include="FeaturesBelowMouse.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -263,6 +266,9 @@
       <Filter>wtMapbox</Filter>
     </ClInclude>
     <ClInclude Include="DisplayPopup.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="FeaturesBelowMouse.h">
       <Filter>Test Application\demos</Filter>
     </ClInclude>
   </ItemGroup>

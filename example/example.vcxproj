@@ -169,6 +169,7 @@
     <ClCompile Include="CreateClusters.cpp" />
     <ClCompile Include="DisplayMap.cpp" />
     <ClCompile Include="DisplayPopup.cpp" />
+    <ClCompile Include="FeaturesBelowMouse.cpp" />
     <ClCompile Include="FitBounds.cpp" />
     <ClCompile Include="GeoJSONLine.cpp" />
     <ClCompile Include="GeoJSONPoint.cpp" />
@@ -215,6 +216,7 @@
     <ClInclude Include="..\include\wtMapbox.h" />
     <ClInclude Include="ChangeColors.h" />
     <ClInclude Include="DisplayPopup.h" />
+    <ClInclude Include="FeaturesBelowMouse.h" />
     <ClInclude Include="FitBounds.h" />
     <ClInclude Include="GeoJSONLine.h" />
     <ClInclude Include="GeoJSONPoint.h" />
