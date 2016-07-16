@@ -308,6 +308,23 @@ namespace MapBox {
     return *this;
   }
 
+  Map & Map::addJSListener(C Wt::WString & event, C Wt::WString & funcName, C Wt::WString & code) {
+    std::stringstream stream;
+    stream << jsRef() << "." << funcName << " = " << code << ";";
+    stream << jsRef() << ".map.on(\'" << event << "', "
+      << jsRef() << "." << funcName << ");";
+    doGmJavaScript(stream.str());
+    return *this;
+  }
+
+  Map & Map::remJSListener(C Wt::WString & event, C Wt::WString & funcName) {
+    std::stringstream stream;
+    stream << jsRef() << ".map.off(\'" << event << "', "
+      << jsRef() << "." << funcName << ");";
+    doGmJavaScript(stream.str());
+    return *this;
+  }
+
   Wt::JSignal<Coordinate> & Map::mouseMoved() {
     if (!mouseMoved_) {
       mouseMoved_ = new Wt::JSignal<Coordinate>(this, "mousemove");

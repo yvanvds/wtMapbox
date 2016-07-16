@@ -87,6 +87,10 @@ namespace MapBox {
     // Should be one of I_DRAGPAN, I_BOXZOOM, ...
     void enableInteraction(const Wt::WString & interaction, bool value);
 
+    // client side event handling
+    Map & addJSListener(C Wt::WString & event, C Wt::WString & funcName, C Wt::WString & code);
+    Map & remJSListener(C Wt::WString & event, C Wt::WString & funcName);
+
     // sources
     Map & addSource   (Source * source);
     Map & removeSource(Source * source);
