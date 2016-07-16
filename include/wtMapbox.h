@@ -20,5 +20,8 @@
 #include "RasterLayer.h"
 #include "SymbolLayer.h"
 
+// other
+#include "Popup.h"
+
 // GeoJSON
 #include "GeoJSON.h"

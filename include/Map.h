@@ -124,7 +124,7 @@ namespace MapBox {
     int bearing_;
     Wt::WString language_;
 
-    std::vector<Layer> layers_;
+    //std::vector<Layer> layers_;
   };
 
 }

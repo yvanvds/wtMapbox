@@ -159,6 +159,7 @@
     <ClCompile Include="..\source\Layer.cpp" />
     <ClCompile Include="..\source\LineLayer.cpp" />
     <ClCompile Include="..\source\Map.cpp" />
+    <ClCompile Include="..\source\Popup.cpp" />
     <ClCompile Include="..\source\RasterLayer.cpp" />
     <ClCompile Include="..\source\RasterSource.cpp" />
     <ClCompile Include="..\source\Source.cpp" />
@@ -167,6 +168,7 @@
     <ClCompile Include="ChangeColors.cpp" />
     <ClCompile Include="CreateClusters.cpp" />
     <ClCompile Include="DisplayMap.cpp" />
+    <ClCompile Include="DisplayPopup.cpp" />
     <ClCompile Include="FitBounds.cpp" />
     <ClCompile Include="GeoJSONLine.cpp" />
     <ClCompile Include="GeoJSONPoint.cpp" />
@@ -203,6 +205,7 @@
     <ClInclude Include="..\include\Layer.h" />
     <ClInclude Include="..\include\LineLayer.h" />
     <ClInclude Include="..\include\Map.h" />
+    <ClInclude Include="..\include\Popup.h" />
     <ClInclude Include="..\include\RasterLayer.h" />
     <ClInclude Include="..\include\RasterSource.h" />
     <ClInclude Include="..\include\Source.h" />
@@ -211,6 +214,7 @@
     <ClInclude Include="..\include\VideoSource.h" />
     <ClInclude Include="..\include\wtMapbox.h" />
     <ClInclude Include="ChangeColors.h" />
+    <ClInclude Include="DisplayPopup.h" />
     <ClInclude Include="FitBounds.h" />
     <ClInclude Include="GeoJSONLine.h" />
     <ClInclude Include="GeoJSONPoint.h" />

@@ -130,6 +130,12 @@
       <Filter>Test Application\demos</Filter>
     </ClCompile>
     <ClCompile Include="GetCoordinates.cpp" />
+    <ClCompile Include="..\source\Popup.cpp">
+      <Filter>wtMapbox</Filter>
+    </ClCompile>
+    <ClCompile Include="DisplayPopup.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -251,6 +257,12 @@
       <Filter>Test Application\demos</Filter>
     </ClInclude>
     <ClInclude Include="GetCoordinates.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Popup.h">
+      <Filter>wtMapbox</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayPopup.h">
       <Filter>Test Application\demos</Filter>
     </ClInclude>
   </ItemGroup>
