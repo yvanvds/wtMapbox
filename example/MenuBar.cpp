@@ -19,6 +19,7 @@
 #include "GeoJSONPoly.h"
 #include "MouseHighlight.h"
 #include "GeoJSONPoint.h"
+#include "GetCoordinates.h"
 
 MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
 {
@@ -40,6 +41,7 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   cb->addItem("Add a GeoJSON polygon");
   cb->addItem("Mouse Highlight");
   cb->addItem("Draw GeoJSON points");
+  cb->addItem("Get coordinates from mouse");
   
   cb->setCurrentIndex(0);
   cb->setMargin(10);
@@ -61,6 +63,7 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   stack->addWidget(new GeoJSONPoly());
   stack->addWidget(new MouseHighlight());
   stack->addWidget(new GeoJSONPoint());
+  stack->addWidget(new GetCoordinates());
 
   cb->changed().connect(std::bind([=]() {
     int choice = cb->currentIndex();

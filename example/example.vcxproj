@@ -171,6 +171,8 @@
     <ClCompile Include="GeoJSONLine.cpp" />
     <ClCompile Include="GeoJSONPoint.cpp" />
     <ClCompile Include="GeoJSONPoly.cpp" />
+    <ClCompile Include="GetCoordinates.cpp" />
+    <ClCompile Include="GetCoordinatescpp.cpp" />
     <ClCompile Include="Heatmap.cpp" />
     <ClCompile Include="HeightLines.cpp" />
     <ClCompile Include="LayerOrder.cpp" />
@@ -213,6 +215,7 @@
     <ClInclude Include="GeoJSONLine.h" />
     <ClInclude Include="GeoJSONPoint.h" />
     <ClInclude Include="GeoJSONPoly.h" />
+    <ClInclude Include="GetCoordinates.h" />
     <ClInclude Include="HeightLines.h" />
     <ClInclude Include="CreateClusters.h" />
     <ClInclude Include="Demo.h" />

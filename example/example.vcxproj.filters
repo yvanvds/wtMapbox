@@ -126,6 +126,10 @@
     <ClCompile Include="GeoJSONPoint.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
+    <ClCompile Include="GetCoordinatescpp.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="GetCoordinates.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -244,6 +248,9 @@
       <Filter>Test Application\demos</Filter>
     </ClInclude>
     <ClInclude Include="GeoJSONPoint.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="GetCoordinates.h">
       <Filter>Test Application\demos</Filter>
     </ClInclude>
   </ItemGroup>
