@@ -2,6 +2,7 @@
 
 #include <string>
 #include "Source.h"
+#include "GeoJSON.h"
 
 namespace MapBox {
 
@@ -10,7 +11,7 @@ namespace MapBox {
   public:
     GeoJSONSource();
 
-    
+    GeoJSONSource & sourceData(GeoJSONObject * data);
     GeoJSONSource & setMaxZoom(int level);
     // maxClusterZoom defaults to maxZoom - 1
     GeoJSONSource & setCluster(int radius = 50, int maxClusterZoom = -1);
@@ -26,7 +27,7 @@ namespace MapBox {
     virtual Wt::WString render();
 
   private:
-    
+    GeoJSONObject * data_;
     int maxZoom_;
     bool cluster_;
     int clusterRadius_;

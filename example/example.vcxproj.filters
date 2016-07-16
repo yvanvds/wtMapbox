@@ -114,6 +114,12 @@
     <ClCompile Include="..\source\GeoJSON.cpp">
       <Filter>wtMapbox</Filter>
     </ClCompile>
+    <ClCompile Include="GeoJSONLine.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoJSONPoly.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -221,6 +227,12 @@
     </ClInclude>
     <ClInclude Include="..\include\GeoJSON.h">
       <Filter>wtMapbox</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoJSONLine.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoJSONPoly.h">
+      <Filter>Test Application\demos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -27,15 +27,15 @@ namespace MapBox {
   }
 
   void GGeometryObject::addCoordinate(C Coordinate & pos) {
-    Json::Array & arr = (Json::Array &)object.get("coordinates");
-    arr.emplace_back(Json::Value(Json::ArrayType));
+    Json::Array & arr = object["coordinates"];
+    arr.push_back(Json::Value(Json::ArrayType));
     Json::Array & back = (Json::Array &)arr.back();
     back.push_back(pos.longitude());
     back.push_back(pos.latitude());
   }
 
   void GGeometryObject::clearCoordinates() {
-    Json::Array & arr = (Json::Array &)object.get("coordinates");
+    Json::Array & arr = object["coordinates"];
     arr.clear();
   }
 
@@ -44,7 +44,7 @@ namespace MapBox {
   }
 
   void GPoint::set(C Coordinate & pos) {
-    Json::Array& arr = (Json::Array &)object.get("coordinates");
+    Json::Array& arr = object["coordinates"];
     if (!arr.empty()) arr.clear();
     arr.push_back(pos.longitude());
     arr.push_back(pos.latitude());
@@ -86,7 +86,7 @@ namespace MapBox {
   GMultiLineString::GMultiLineString() : GGeometryObject("MultiLineString") {}
 
   GMultiLineString & GMultiLineString::add(C Coordinate & pos, int line) {
-    Json::Array & arr = (Json::Array &)object.get("coordinates");
+    Json::Array & arr = object["coordinates"];
     while (arr.size() < line + 1) {
       arr.emplace_back(Json::Value(Json::ArrayType));
     }
@@ -100,7 +100,7 @@ namespace MapBox {
   }
 
   GMultiLineString & GMultiLineString::clear(int line) {
-    Json::Array & arr = (Json::Array &)object.get("coordinates");
+    Json::Array & arr = object["coordinates"];
     if (line < arr.size()) {
       arr.erase(arr.begin() + line);
     }
@@ -108,7 +108,7 @@ namespace MapBox {
   }
 
   GMultiLineString & GMultiLineString::clear() {
-    Json::Array & arr = (Json::Array &)object.get("coordinates");
+    Json::Array & arr = object["coordinates"];
     arr.clear();
     return *this;
   }
@@ -116,7 +116,7 @@ namespace MapBox {
   GPolygon::GPolygon() : GGeometryObject("Polygon") {}
 
   GPolygon & GPolygon::add(C Coordinate & pos, int ring) {
-    Json::Array & arr = (Json::Array &)object.get("coordinates");
+    Json::Array & arr = object["coordinates"];
     while (arr.size() < ring + 1) {
       arr.emplace_back(Json::Value(Json::ArrayType));
     }
@@ -130,7 +130,7 @@ namespace MapBox {
   }
 
   GPolygon & GPolygon::clear(int ring) {
-    Json::Array & arr = (Json::Array &)object.get("coordinates");
+    Json::Array & arr = object["coordinates"];
     if (ring < arr.size()) {
       arr.erase(arr.begin() + ring);
     }
@@ -138,7 +138,7 @@ namespace MapBox {
   }
 
   GPolygon & GPolygon::clear() {
-    Json::Array & arr = (Json::Array &)object.get("coordinates");
+    Json::Array & arr = object["coordinates"];
     arr.clear();
     return *this;
   }
@@ -146,7 +146,7 @@ namespace MapBox {
   GMultiPolygon::GMultiPolygon() : GGeometryObject("MultiPolygon") {}
 
   GMultiPolygon & GMultiPolygon::add(C Coordinate & pos, int ring, int polygon) {
-    Json::Array & arr = (Json::Array &)object.get("coordinates");
+    Json::Array & arr = object["coordinates"];
 
     while (arr.size() < polygon + 1) {
       arr.emplace_back(Json::Value(Json::ArrayType));
@@ -168,7 +168,7 @@ namespace MapBox {
   }
 
   GMultiPolygon & GMultiPolygon::clear(int polygon) {
-    Json::Array & arr = (Json::Array &)object.get("coordinates");
+    Json::Array & arr = object["coordinates"];
     if (polygon < arr.size()) {
       arr.erase(arr.begin() + polygon);
     }
@@ -176,7 +176,7 @@ namespace MapBox {
   }
 
   GMultiPolygon & GMultiPolygon::clear() {
-    Json::Array & arr = (Json::Array &)object.get("coordinates");
+    Json::Array & arr = object["coordinates"];
     arr.clear();
     return *this;
   }
@@ -188,7 +188,7 @@ namespace MapBox {
   }
 
   GGeometryCollection & GGeometryCollection::add(C GGeometryObject & obj) {
-    Json::Array & arr = (Json::Array &)object.get("geometries");
+    Json::Array & arr = object["geometries"];
     arr.emplace_back(Json::Value(Json::ObjectType));
     ((Json::Object &)(arr.back())) = obj.getObject();
     return *this;
@@ -231,7 +231,7 @@ namespace MapBox {
   }
 
   GFeatureCollection & GFeatureCollection::add(C GFeature & feature) {
-    Json::Array & arr = (Json::Array &)object.get("features");
+    Json::Array & arr = object["features"];
     arr.emplace_back(Json::Value(Json::ObjectType));
     ((Json::Object &)(arr.back())) = feature.getObject();
     return *this;
