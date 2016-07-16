@@ -10,8 +10,8 @@ FitBounds::FitBounds()
   button->setMargin(10);
   button->clicked().connect(std::bind([=]() {
     MapBox::Bounds bounds;
-    bounds.leftDown = MapBox::Coordinate(-5.353521, 32.958984);
-    bounds.rightUp = MapBox::Coordinate(5.615985, 43.50585);
+    bounds.min = MapBox::Coordinate(-5.353521, 32.958984);
+    bounds.max = MapBox::Coordinate(5.615985, 43.50585);
     APP->getMap()->fitBounds(bounds);
   }));
 
@@ -21,8 +21,8 @@ FitBounds::FitBounds()
   button->setMargin(10);
   button->clicked().connect(std::bind([=]() {
     MapBox::Bounds bounds;
-    bounds.leftDown = MapBox::Coordinate(50.832701, 4.336266);
-    bounds.rightUp = MapBox::Coordinate(50.858259, 4.370745);
+    bounds.min = MapBox::Coordinate(50.832701, 4.336266);
+    bounds.max = MapBox::Coordinate(50.858259, 4.370745);
     APP->getMap()->fitBounds(bounds, true, 10);
   }));
 

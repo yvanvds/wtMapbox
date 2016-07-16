@@ -153,6 +153,7 @@
     <ClCompile Include="..\source\Conversions.cpp" />
     <ClCompile Include="..\source\Coordinate.cpp" />
     <ClCompile Include="..\source\FillLayer.cpp" />
+    <ClCompile Include="..\source\GeoJSON.cpp" />
     <ClCompile Include="..\source\GeoJSONSource.cpp" />
     <ClCompile Include="..\source\ImageSource.cpp" />
     <ClCompile Include="..\source\Layer.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="..\include\Definitions.h" />
     <ClInclude Include="..\include\Enumerations.h" />
     <ClInclude Include="..\include\FillLayer.h" />
+    <ClInclude Include="..\include\GeoJSON.h" />
     <ClInclude Include="..\include\GeoJSONSource.h" />
     <ClInclude Include="..\include\ImageSource.h" />
     <ClInclude Include="..\include\Layer.h" />

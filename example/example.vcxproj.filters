@@ -111,6 +111,9 @@
     <ClCompile Include="LayerOrder.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
+    <ClCompile Include="..\source\GeoJSON.cpp">
+      <Filter>wtMapbox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -215,6 +218,9 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="LayerOrder.h">
       <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GeoJSON.h">
+      <Filter>wtMapbox</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

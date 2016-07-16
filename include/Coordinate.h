@@ -56,7 +56,7 @@ namespace MapBox {
   };
 
   struct Bounds {
-    Coordinate leftDown, rightUp;
+    Coordinate min, max;
   };
 
 #ifndef WT_TARGET_JAVA

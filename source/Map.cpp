@@ -235,8 +235,8 @@ namespace MapBox {
   {
     std::stringstream stream;
     stream << jsRef() + ".map.fitBounds(["
-      << ToScript(bounds.leftDown) << ", "
-      << ToScript(bounds.rightUp) << "]";
+      << ToScript(bounds.min) << ", "
+      << ToScript(bounds.max) << "]";
 
     if (linear == true || padding != 0 || maxZoom != -1) {
       stream << ", { ";
