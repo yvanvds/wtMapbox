@@ -169,6 +169,7 @@
     <ClCompile Include="DisplayMap.cpp" />
     <ClCompile Include="FitBounds.cpp" />
     <ClCompile Include="GeoJSONLine.cpp" />
+    <ClCompile Include="GeoJSONPoint.cpp" />
     <ClCompile Include="GeoJSONPoly.cpp" />
     <ClCompile Include="Heatmap.cpp" />
     <ClCompile Include="HeightLines.cpp" />
@@ -210,6 +211,7 @@
     <ClInclude Include="ChangeColors.h" />
     <ClInclude Include="FitBounds.h" />
     <ClInclude Include="GeoJSONLine.h" />
+    <ClInclude Include="GeoJSONPoint.h" />
     <ClInclude Include="GeoJSONPoly.h" />
     <ClInclude Include="HeightLines.h" />
     <ClInclude Include="CreateClusters.h" />

@@ -89,7 +89,7 @@ namespace MapBox {
 
   SymbolLayer::Icon & SymbolLayer::Icon::image(C Wt::WString & value) {
     image_ = value;
-    parent->setLayout("icon-image", value);
+    parent->setLayout("icon-image", Quote(value));
     return *this;
   }
 
@@ -209,7 +209,7 @@ namespace MapBox {
 
   SymbolLayer::Text & SymbolLayer::Text::label(C Wt::WString & value) {
     label_ = value;
-    parent->setLayout("text-field", value);
+    parent->setLayout("text-field", Quote(value));
     return *this;
   }
 

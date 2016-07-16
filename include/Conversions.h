@@ -3,6 +3,7 @@
 #include "Enumerations.h"
 #include "Coordinate.h"
 #include "Definitions.h"
+#include <Wt/WString>
 
 namespace MapBox {
   // helper functions to get values to javascript
@@ -11,6 +12,8 @@ namespace MapBox {
   Wt::WString ToScript(bool value);
   Wt::WString ToScript(int value);
   Wt::WString ToScript(float value);
+
+  Wt::WString Quote(C Wt::WString & s);
 
   // enums
   Wt::WString ToScript(ANCHOR value);

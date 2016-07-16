@@ -123,6 +123,9 @@
     <ClCompile Include="MouseHighlight.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
+    <ClCompile Include="GeoJSONPoint.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -238,6 +241,9 @@
       <Filter>Test Application\demos</Filter>
     </ClInclude>
     <ClInclude Include="MouseHighlight.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoJSONPoint.h">
       <Filter>Test Application\demos</Filter>
     </ClInclude>
   </ItemGroup>

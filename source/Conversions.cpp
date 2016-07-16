@@ -43,8 +43,8 @@ namespace MapBox {
   Wt::WString ToScript(PLACEMENT value)
   {
     switch (value) {
-    case PLACEMENT::Line: return "line";
-    case PLACEMENT::Point: return "point";
+    case PLACEMENT::Line: return "'line'";
+    case PLACEMENT::Point: return "'point'";
     }
     return Wt::WString();
   }
@@ -52,9 +52,9 @@ namespace MapBox {
   Wt::WString ToScript(JUSTIFY value)
   {
     switch (value) {
-    case JUSTIFY::Center: return "center";
-    case JUSTIFY::Left: return "left";
-    case JUSTIFY::Right: return "right";
+    case JUSTIFY::Center: return "'center'";
+    case JUSTIFY::Left: return "'left'";
+    case JUSTIFY::Right: return "'right'";
     }
     return Wt::WString();
   }
@@ -62,15 +62,15 @@ namespace MapBox {
   Wt::WString ToScript(TEXT_ANCHOR value)
   {
     switch (value) {
-    case TEXT_ANCHOR::Bottom: return "bottom";
-    case TEXT_ANCHOR::BottomLeft: return "bottom-left";
-    case TEXT_ANCHOR::BottomRight: return "bottom-right";
-    case TEXT_ANCHOR::Center: return "center";
-    case TEXT_ANCHOR::Left: return "left";
-    case TEXT_ANCHOR::Right: return "right";
-    case TEXT_ANCHOR::Top: return "top";
-    case TEXT_ANCHOR::TopLeft: return "top-left";
-    case TEXT_ANCHOR::TopRight: return "top-right";
+    case TEXT_ANCHOR::Bottom: return "'bottom'";
+    case TEXT_ANCHOR::BottomLeft: return "'bottom-left'";
+    case TEXT_ANCHOR::BottomRight: return "'bottom-right'";
+    case TEXT_ANCHOR::Center: return "'center'";
+    case TEXT_ANCHOR::Left: return "'left'";
+    case TEXT_ANCHOR::Right: return "'right'";
+    case TEXT_ANCHOR::Top: return "'top'";
+    case TEXT_ANCHOR::TopLeft: return "'top-left'";
+    case TEXT_ANCHOR::TopRight: return "'top-right'";
     }
     return Wt::WString();
   }
@@ -78,9 +78,9 @@ namespace MapBox {
   Wt::WString ToScript(TRANSFORM value)
   {
     switch (value) {
-    case TRANSFORM::None: return "none";
-    case TRANSFORM::lowercase: return "lowercase";
-    case TRANSFORM::UPPERCASE: return "uppercase";
+    case TRANSFORM::None: return "'none'";
+    case TRANSFORM::lowercase: return "'lowercase'";
+    case TRANSFORM::UPPERCASE: return "'uppercase'";
     }
     return Wt::WString();
   }
@@ -93,4 +93,7 @@ namespace MapBox {
     return "'" + value.cssText() + "'";
   }
 
+  Wt::WString Quote(C Wt::WString & s) {
+    return Wt::WString("'" + s + "'");
+  }
 }
