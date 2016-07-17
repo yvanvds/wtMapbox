@@ -1,0 +1,25 @@
+.examplemap {
+  top: 0px;
+  left: 15vw;
+  bottom: 0px;
+  width: 85vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.examplemenu {
+  border-right: 1px solid #79c843;
+  background-color: #c8e8b2;
+  float: left;
+  top: 0px;
+  width: 15vw;
+  height: 100vh;
+  position: absolute;
+  bottom: 0px;
+  overflow-x: hidden;
+}
+
+.mapboxgl-popup {
+    max-width: 400px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}

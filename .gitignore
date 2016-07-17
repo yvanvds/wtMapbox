@@ -301,3 +301,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+*.exe
+website/wt_config.xml
+*.dll
