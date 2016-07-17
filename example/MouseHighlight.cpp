@@ -4,20 +4,20 @@
 
 MouseHighlight::MouseHighlight()
 {
-  source.setFromURL("https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_110m_admin_1_states_provinces.geojson");
+  source.set("https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_110m_admin_1_states_provinces.geojson");
 
-  fills.setSource(&source);
+  fills.set(&source);
   fills.color(Wt::WColor("#627BC1"));
   fills.opacity(0.5);
 
-  borders.setSource(&source);
+  borders.set(&source);
   borders.color(Wt::WColor("#627BC1"));
   borders.width(2);
 
-  hover.setSource(&source);
+  hover.set(&source);
   hover.color(Wt::WColor("#627BC1"));
   hover.opacity(1);
-  hover.setFilter("['==', 'name', '']");
+  hover.filter("['==', 'name', '']");
 
   // client side code
   mouseMove.trigger(MapBox::EVENT::MouseMove).code("function(e) {"
@@ -39,15 +39,15 @@ MouseHighlight::MouseHighlight()
 void MouseHighlight::onShow()
 {
   APP->getMap()->setMapStyle(MapBox::MAPSTYLE::Streets, true);
-  APP->getMap()->addSource(&source).addLayer(&fills).addLayer(&borders).addLayer(&hover);
+  APP->getMap()->add(&source).add(&fills).add(&borders).add(&hover);
   APP->getMap()->center(MapBox::Coordinate(37.830348, -100.486052)).zoom(2);
-  APP->getMap()->addJSHandler(mouseMove).addJSHandler(mouseOut);
+  APP->getMap()->add(mouseMove).add(mouseOut);
   APP->getMap()->applyMapStyle();
 }
 
 void MouseHighlight::onHide()
 {
-  APP->getMap()->removeLayer(&fills).removeLayer(&borders).removeLayer(&hover).removeSource(&source);
+  APP->getMap()->rem(&fills).rem(&borders).rem(&hover).rem(&source);
   // TODO: is this the most efficient way to unbind a function?
-  APP->getMap()->remJSHandler(mouseMove).remJSHandler(mouseOut);
+  APP->getMap()->rem(mouseMove).rem(mouseOut);
 }

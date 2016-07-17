@@ -11,13 +11,13 @@ namespace MapBox {
   {
   }
 
-  Source & VideoSource::setFromURL(C Wt::WString & url)
+  Source & VideoSource::set(C Wt::WString & url)
   {
-    addUrl(url);
+    add(url);
     return *this;
   }
 
-  VideoSource & VideoSource::addUrl(C Wt::WString & url)
+  VideoSource & VideoSource::add(C Wt::WString & url)
   {
     urls.emplace_back(url);
     return *this;

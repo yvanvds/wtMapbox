@@ -30,7 +30,7 @@ namespace MapBox {
     
   }
 
-  Layer & Layer::setVisible(bool value) {
+  Layer & Layer::visible(bool value) {
     if (value) setLayout("visibility", "'visible'");
     else      setLayout("visibility", "'none'");
     return *this;
@@ -42,23 +42,23 @@ namespace MapBox {
     return true; // layers are visible by default
   }
 
-  Layer & Layer::setSource(Source * source) {
+  Layer & Layer::set(Source * source) {
     source_ = source;
     return *this;
   }
 
-  Layer & Layer::setSourceLayer(C Wt::WString & value) {
+  Layer & Layer::sourceLayer(C Wt::WString & value) {
     slayer_ = value;
     return *this;
   }
 
-  Layer & Layer::setZoom(int min, int max) {
+  Layer & Layer::zoom(int min, int max) {
     minZoom_ = min;
     maxZoom_ = max;
     return *this;
   }
 
-  Layer & Layer::setType(LAYERTYPE type) {
+  Layer & Layer::type(LAYERTYPE type) {
     type_ = type;
     return *this;
   }
@@ -168,7 +168,7 @@ namespace MapBox {
     }
   }
 
-  Layer & Layer::setFilter(const Wt::WString & value) {
+  Layer & Layer::filter(const Wt::WString & value) {
     filter_ = value;
     return *this;
   }

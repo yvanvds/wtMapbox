@@ -17,18 +17,19 @@ namespace MapBox {
     Layer();
 
     // layout properties
-    Layer & setVisible(bool value); bool visible() C;
+    Layer & visible(bool value); bool visible() C;
 
-    Layer & setSource(Source * source);
-    Layer & setSourceLayer(C Wt::WString & value);
-    Layer & setZoom  (int min, int max);
-    Layer & setFilter(const Wt::WString & value);
+    Layer & set(Source * source);
+    Layer & sourceLayer(C Wt::WString & value);
+    Layer & zoom  (int min, int max);
+    Layer & filter(const Wt::WString & value);
     
       LAYERTYPE     type() C { return type_; }
     C Wt::WString & id  () C { return id_  ; }
 
     Wt::WString render(Map * parent);
 
+    // you could use these to set properties which are not implemented
     Layer       & setLayout(C Wt::WString & key, C Wt::WString & value);
     Layer       & remLayout(C Wt::WString & key);
     Wt::WString   getLayout(C Wt::WString & key) C;
@@ -39,7 +40,7 @@ namespace MapBox {
     
 
   protected:
-    Layer & setType(LAYERTYPE type);
+    Layer & type(LAYERTYPE type);
 
     void addLayoutProperties(std::stringstream & stream) C;
     void addPaintProperties (std::stringstream & stream) C;

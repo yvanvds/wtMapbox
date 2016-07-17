@@ -6,7 +6,7 @@ namespace MapBox {
 
   FillLayer::FillLayer()
   {
-    setType(LAYERTYPE::Fill);
+    type(LAYERTYPE::Fill);
     color_.setRgb(0, 0, 0, 255);
     outlineColor_.setRgb(0, 0, 0, 255);
     translate_ = Coordinate(0, 0);

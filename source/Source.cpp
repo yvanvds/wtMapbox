@@ -30,7 +30,7 @@ namespace MapBox {
 
   }
 
-  Source & Source::setFromURL(const Wt::WString & url) {
+  Source & Source::set(const Wt::WString & url) {
     url_ = url;
     return *this;
   }

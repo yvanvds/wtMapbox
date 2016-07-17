@@ -27,9 +27,9 @@ GeoJSONPoint::GeoJSONPoint()
   featureCollection.add(feature1);
   featureCollection.add(feature2);
 
-  source.sourceData(&featureCollection);
+  source.set(&featureCollection);
 
-  layer.setSource(&source);
+  layer.set(&source);
   layer.icon.image("{icon}-15").size(2);
   layer.text.label("{title}")
             .font("['Open Sans Semibold', 'Arial Unicode MS Bold']")
@@ -42,12 +42,12 @@ GeoJSONPoint::GeoJSONPoint()
 void GeoJSONPoint::onShow()
 {
   APP->getMap()->setMapStyle(MapBox::MAPSTYLE::Light, true);
-  APP->getMap()->addSource(&source).addLayer(&layer);
+  APP->getMap()->add(&source).add(&layer);
   APP->getMap()->center(MapBox::Coordinate(37.8, -96)).zoom(3);
   APP->getMap()->applyMapStyle();
 }
 
 void GeoJSONPoint::onHide()
 {
-  APP->getMap()->removeLayer(&layer).removeSource(&source);
+  APP->getMap()->rem(&layer).rem(&source);
 }

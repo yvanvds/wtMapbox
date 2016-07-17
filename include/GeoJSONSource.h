@@ -11,10 +11,11 @@ namespace MapBox {
   public:
     GeoJSONSource();
 
-    GeoJSONSource & sourceData(GeoJSONObject * data);
-    GeoJSONSource & setMaxZoom(int level);
-    // maxClusterZoom defaults to maxZoom - 1
-    GeoJSONSource & setCluster(int radius = 50, int maxClusterZoom = -1);
+    GeoJSONSource & set(C Wt::WString   & url );
+    GeoJSONSource & set(  GeoJSONObject * data);
+
+    GeoJSONSource & maxZoom(int level);
+    GeoJSONSource & cluster(int radius = 50, int maxClusterZoom = -1);
     GeoJSONSource & disableCluster();
 
     C Wt::WString & url() { return url_; }

@@ -6,7 +6,7 @@ namespace MapBox {
     : icon(this)
     , text(this)
   {
-    setType(LAYERTYPE::Symbol);
+    type(LAYERTYPE::Symbol);
     placement_  = PLACEMENT::Point;
     spacing_    = 250;
     avoidEdges_ = false;

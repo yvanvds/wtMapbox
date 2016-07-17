@@ -4,16 +4,16 @@
 
 HeightLines::HeightLines()
 {
-  museums.setFromURL("mapbox://mapbox.2opop9hr");
-  contours.setFromURL("mapbox://mapbox.mapbox-terrain-v2");
+  museums.set("mapbox://mapbox.2opop9hr");
+  contours.set("mapbox://mapbox.mapbox-terrain-v2");
 
-  museumLayer.setSource(&museums);
-  museumLayer.setSourceLayer("museum-cusco");
+  museumLayer.set(&museums);
+  museumLayer.sourceLayer("museum-cusco");
   museumLayer.radius(8);
   museumLayer.color(Wt::WColor(55, 148, 179));
 
-  contourLayer.setSource(&contours);
-  contourLayer.setSourceLayer("contour");
+  contourLayer.set(&contours);
+  contourLayer.sourceLayer("contour");
   contourLayer.join(MapBox::JOIN::Round);
   contourLayer.cap(MapBox::CAP::Round);
   contourLayer.color(Wt::WColor("#877b59"));
@@ -65,18 +65,18 @@ HeightLines::HeightLines()
 void HeightLines::onShow()
 {
   APP->getMap()->setMapStyle(MapBox::MAPSTYLE::Streets, true);
-  APP->getMap()->addSource(&museums);
-  APP->getMap()->addSource(&contours);
-  APP->getMap()->addLayer(&museumLayer);
-  APP->getMap()->addLayer(&contourLayer);
+  APP->getMap()->add(&museums);
+  APP->getMap()->add(&contours);
+  APP->getMap()->add(&museumLayer);
+  APP->getMap()->add(&contourLayer);
   APP->getMap()->easeTo(MapBox::Coordinate(-13.517379300798098 ,-71.97722138410576), 15, 1000);
   APP->getMap()->applyMapStyle();
 }
 
 void HeightLines::onHide()
 {
-  APP->getMap()->removeSource(&museums);
-  APP->getMap()->removeSource(&contours);
-  APP->getMap()->removeLayer(&museumLayer);
-  APP->getMap()->removeLayer(&contourLayer);
+  APP->getMap()->rem(&museums);
+  APP->getMap()->rem(&contours);
+  APP->getMap()->rem(&museumLayer);
+  APP->getMap()->rem(&contourLayer);
 }

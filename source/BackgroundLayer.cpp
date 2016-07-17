@@ -5,7 +5,7 @@ namespace MapBox {
 
   BackgroundLayer::BackgroundLayer()
   {
-    setType(LAYERTYPE::Background);
+    type(LAYERTYPE::Background);
     color_.setRgb(0, 0, 0, 255);
     opacity_ = 1;
   }

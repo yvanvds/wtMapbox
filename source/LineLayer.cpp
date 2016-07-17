@@ -7,7 +7,7 @@ namespace MapBox {
 
   LineLayer::LineLayer()
   {
-    setType(LAYERTYPE::Line);
+    type(LAYERTYPE::Line);
     cap_ = CAP::Butt;
     join_ = JOIN::Miter;
     color_.setRgb(0, 0, 0, 255);

@@ -30,23 +30,23 @@ GeoJSONPoly::GeoJSONPoly()
   feature.geometry(poly);
   feature.properties(properties);
 
-  source.sourceData(&feature);
+  source.set(&feature);
 
-  layer.setSource(&source);
+  layer.set(&source);
   layer.color(Wt::WColor("#088"));
   layer.opacity(0.8);
-  layer.setSourceLayer("Maine");
+  layer.sourceLayer("Maine");
 }
 
 void GeoJSONPoly::onShow()
 {
   APP->getMap()->setMapStyle(MapBox::MAPSTYLE::Streets, true);
-  APP->getMap()->addSource(&source).addLayer(&layer);
+  APP->getMap()->add(&source).add(&layer);
   APP->getMap()->center(MapBox::Coordinate(45.1374518906, -68.13734351)).zoom(5);
   APP->getMap()->applyMapStyle();
 }
 
 void GeoJSONPoly::onHide()
 {
-  APP->getMap()->removeLayer(&layer).removeSource(&source);
+  APP->getMap()->rem(&layer).rem(&source);
 }

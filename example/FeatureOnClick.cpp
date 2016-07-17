@@ -4,8 +4,8 @@
 
 FeatureOnClick::FeatureOnClick()
 {
-  source.setFromURL("https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_110m_admin_1_states_provinces_shp.geojson");
-  layer.setSource(&source);
+  source.set("https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_110m_admin_1_states_provinces_shp.geojson");
+  layer.set(&source);
   layer.color(Wt::WColor(200, 100, 240));
   layer.outlineColor(Wt::WColor(0, 255, 0));
   layer.opacity(0.5);
@@ -32,7 +32,7 @@ void FeatureOnClick::onShow()
     coordinate = e;
   }, std::placeholders::_1));
   
-  APP->getMap()->addSource(&source).addLayer(&layer);
+  APP->getMap()->add(&source).add(&layer);
   APP->getMap()->center(MapBox::Coordinate(38.907, -100.04)).zoom(3);
   
   // signale to collect feature
@@ -52,7 +52,7 @@ void FeatureOnClick::onShow()
   APP->getMap()->enableClickedFeature(true);
 
   // add mousemove handler to change cursor on features
-  APP->getMap()->addJSHandler(mouseMove);
+  APP->getMap()->add(mouseMove);
 
   APP->getMap()->applyMapStyle();
 }
@@ -60,8 +60,8 @@ void FeatureOnClick::onShow()
 void FeatureOnClick::onHide()
 {
   APP->getMap()->clicked().disconnect(connection);
-  APP->getMap()->removeLayer(&layer).removeSource(&source);
+  APP->getMap()->rem(&layer).rem(&source);
   APP->getMap()->enableClickedFeature(false);
-  APP->getMap()->remJSHandler(mouseMove);
+  APP->getMap()->rem(mouseMove);
   popup->remove();
 }

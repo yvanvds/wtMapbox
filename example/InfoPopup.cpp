@@ -11,8 +11,8 @@ InfoPopup::InfoPopup()
   text->setMargin(10);
 
   createCollection();
-  source.sourceData(&collection);
-  layer.setSource(&source);
+  source.set(&collection);
+  layer.set(&source);
   layer.icon.image("{icon}-15");
   layer.icon.size(1.5);
   layer.icon.allowOverlap(true);
@@ -47,16 +47,16 @@ InfoPopup::InfoPopup()
 void InfoPopup::onShow()
 {
   APP->getMap()->setMapStyle(MAPSTYLE::Streets, true);
-  APP->getMap()->addSource(&source).addLayer(&layer);
+  APP->getMap()->add(&source).add(&layer);
   APP->getMap()->center(Coordinate(38.907, -77.04)).zoom(11.15);
-  APP->getMap()->addJSHandler(click).addJSHandler(move);
+  APP->getMap()->add(click).add(move);
   APP->getMap()->applyMapStyle();
 }
 
 void InfoPopup::onHide()
 {
-  APP->getMap()->removeLayer(&layer).removeSource(&source);
-  APP->getMap()->remJSHandler(click).remJSHandler(move);
+  APP->getMap()->rem(&layer).rem(&source);
+  APP->getMap()->rem(click).rem(move);
 }
 
 void InfoPopup::createCollection()

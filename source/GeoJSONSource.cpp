@@ -12,17 +12,22 @@ namespace MapBox {
 
   }
 
-  GeoJSONSource & GeoJSONSource::sourceData(GeoJSONObject * data) {
+  GeoJSONSource & GeoJSONSource::set(C Wt::WString & url) {
+    Source::set(url);
+    return *this;
+  }
+
+  GeoJSONSource & GeoJSONSource::set(GeoJSONObject * data) {
     data_ = data;
     return *this;
   }
 
-  GeoJSONSource & GeoJSONSource::setMaxZoom(int level) {
+  GeoJSONSource & GeoJSONSource::maxZoom(int level) {
     maxZoom_ = level;
     return *this;
   }
 
-  GeoJSONSource & GeoJSONSource::setCluster(int radius, int maxClusterZoom) {
+  GeoJSONSource & GeoJSONSource::cluster(int radius, int maxClusterZoom) {
     cluster_ = true;
     clusterRadius_ = radius;
     clusterMaxZoom_ = maxClusterZoom;

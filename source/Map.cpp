@@ -308,7 +308,7 @@ namespace MapBox {
     return *this;
   }
 
-  Map & Map::addJSHandler(C JSHandler & handler) {
+  Map & Map::add(C JSHandler & handler) {
     std::stringstream stream;
     stream << jsRef() << "." << handler.id().toUTF8() << " = " << handler.code().toUTF8() << ";";
     stream << jsRef() << ".map.on(" << ToScript(handler.trigger()) << ", "
@@ -317,7 +317,7 @@ namespace MapBox {
     return *this;
   }
 
-  Map & Map::remJSHandler(C JSHandler & handler) {
+  Map & Map::rem(C JSHandler & handler) {
     std::stringstream stream;
     stream << jsRef() << ".map.off(" << ToScript(handler.trigger()) << ", "
       << jsRef() << "." << handler.id().toUTF8() << ");";
@@ -378,7 +378,7 @@ namespace MapBox {
     doGmJavaScript(stream.str());
   }
 
-  Map & Map::addSource(Source * source) {
+  Map & Map::add(Source * source) {
     std::stringstream stream;
     stream << jsRef() + ".map.addSource(";
     stream << source->render();
@@ -387,7 +387,7 @@ namespace MapBox {
     return *this;
   }
 
-  Map & Map::removeSource(Source * source)
+  Map & Map::rem(Source * source)
   {
     std::stringstream stream;
     stream << "try {\n";
@@ -399,7 +399,7 @@ namespace MapBox {
     return *this;
   }
 
-  Map & Map::addLayer(Layer * layer, C Wt::WString & before) {
+  Map & Map::add(Layer * layer, C Wt::WString & before) {
     std::stringstream stream;
     stream << jsRef() + ".map.addLayer(\n";
     stream << layer->render(this);
@@ -411,7 +411,7 @@ namespace MapBox {
     return *this;
   }
 
-  Map & Map::removeLayer(Layer * layer)
+  Map & Map::rem(Layer * layer)
   {
     std::stringstream stream;
     stream << "try {\n";

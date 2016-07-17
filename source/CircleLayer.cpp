@@ -6,7 +6,7 @@ namespace MapBox {
 
   CircleLayer::CircleLayer()
   {
-    setType(LAYERTYPE::Circle);
+    type(LAYERTYPE::Circle);
     color_.setRgb(0,0,0,255);
     translate_ = Coordinate(0, 0);
     anchor_ = ANCHOR::Map;

@@ -4,7 +4,7 @@
 namespace MapBox {
 
   RasterLayer::RasterLayer() {
-    setType(LAYERTYPE::Raster);
+    type(LAYERTYPE::Raster);
     opacity_ = 1;
     hueRotate_ = 0;
     brightnessMin_ = 0;

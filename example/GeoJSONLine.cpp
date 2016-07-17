@@ -26,8 +26,8 @@ GeoJSONLine::GeoJSONLine()
     .add(MapBox::Coordinate(37.833378258, -122.4922370))
     .add(MapBox::Coordinate(37.833683307, -122.4937820));
 
-  source.sourceData(&line);
-  layer.setSource(&source);
+  source.set(&line);
+  layer.set(&source);
   layer.join(MapBox::JOIN::Round);
   layer.cap(MapBox::CAP::Round);
   layer.color(Wt::WColor("#888"));
@@ -37,7 +37,7 @@ GeoJSONLine::GeoJSONLine()
 void GeoJSONLine::onShow()
 {
   APP->getMap()->setMapStyle(MapBox::MAPSTYLE::Streets, true);
-  APP->getMap()->addSource(&source).addLayer(&layer);
+  APP->getMap()->add(&source).add(&layer);
   APP->getMap()->center(MapBox::Coordinate(37.830348, -122.486052)).zoom(15);
   APP->getMap()->applyMapStyle();
 
@@ -45,5 +45,5 @@ void GeoJSONLine::onShow()
 
 void GeoJSONLine::onHide()
 {
-  APP->getMap()->removeLayer(&layer).removeSource(&source);
+  APP->getMap()->rem(&layer).rem(&source);
 }

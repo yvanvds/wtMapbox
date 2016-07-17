@@ -16,7 +16,7 @@ namespace MapBox {
       SOURCETYPE    type() { return type_; }
     C Wt::WString & id  () { return id_  ; }
     
-    virtual Source & setFromURL(C Wt::WString & url);
+    virtual Source & set(C Wt::WString & url);
 
     virtual Wt::WString render() = 0;
 

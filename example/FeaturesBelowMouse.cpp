@@ -20,11 +20,11 @@ void FeaturesBelowMouse::onShow()
 {
   APP->getMap()->setMapStyle(MapBox::MAPSTYLE::Streets, true);
   APP->getMap()->center(MapBox::Coordinate(50.883198, 4.712435)).zoom(3);
-  APP->getMap()->addJSHandler(mouseMove);
+  APP->getMap()->add(mouseMove);
   APP->getMap()->applyMapStyle();
 }
 
 void FeaturesBelowMouse::onHide()
 {
-  APP->getMap()->remJSHandler(mouseMove);
+  APP->getMap()->rem(mouseMove);
 }

@@ -103,18 +103,16 @@ namespace MapBox {
     void enableInteraction(const Wt::WString & interaction, bool value);
 
     // client side event handler
-    Map & addJSHandler(C JSHandler & handler);
-    Map & remJSHandler(C JSHandler & handler);
-
-
+    Map & add(C JSHandler & handler);
+    Map & rem(C JSHandler & handler);
 
     // sources
-    Map & addSource   (Source * source);
-    Map & removeSource(Source * source);
+    Map & add(Source * source);
+    Map & rem(Source * source);
 
     // Add a layer to the map. The new layer will be displayed on top of all existing layers, unless a layer name is specified as second argument.
-    Map & addLayer   (Layer * layer, C Wt::WString & before = Wt::WString());
-    Map & removeLayer(Layer * layer);
+    Map & add(Layer * layer, C Wt::WString & before = Wt::WString());
+    Map & rem(Layer * layer);
 
     // modify properties
     Map & setPaintProperty(C Wt::WString & layer, C Wt::WString & _property, C Wt::WString & value);
