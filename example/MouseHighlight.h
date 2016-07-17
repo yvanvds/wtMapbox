@@ -15,6 +15,6 @@ private:
   MapBox::LineLayer borders;
   MapBox::FillLayer hover;
 
-  Wt::WString mouseMoveFunction;
-  Wt::WString mouseOutFunction;
+  MapBox::JSHandler mouseMove;
+  MapBox::JSHandler mouseOut;
 };

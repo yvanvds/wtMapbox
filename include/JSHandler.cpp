@@ -7,7 +7,7 @@ namespace MapBox {
 
   Wt::WString getNextJSHandlerID() {
     std::stringstream stream;
-    stream << "jshandler-" << nextJSHandlerID++;
+    stream << "jshandler" << nextJSHandlerID++;
     return stream.str();
   }
 

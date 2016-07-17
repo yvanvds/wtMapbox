@@ -20,19 +20,20 @@ MouseHighlight::MouseHighlight()
   hover.setFilter("['==', 'name', '']");
 
   // client side code
-  // TODO: this works, but it is very prone to errors!
-  mouseMoveFunction = "function(e) {"
+  mouseMove.trigger(MapBox::EVENT::MouseMove).code("function(e) {"
     " var features = " + APP->getMap()->jsRef() + ".map.queryRenderedFeatures(e.point, { layers: ['" + fills.id() + "'] });"
     " if (features.length) {"
     "    " + APP->getMap()->jsRef() + ".map.setFilter('" + hover.id() + "', ['==', 'name', features[0].properties.name]);"
     " } else {"
     "    " + APP->getMap()->jsRef() + ".map.setFilter('" + hover.id() + "', ['==', 'name', '']);"
     " }"
-  "}";
+  "}"
+  );
 
-  mouseOutFunction = "function() {"
+  mouseOut.trigger(MapBox::EVENT::MouseOut).code("function() {"
     "    " + APP->getMap()->jsRef() + ".map.setFilter('" + hover.id() + "', ['==', 'name', '']);"
-   "}";
+   "}"
+  );
 }
 
 void MouseHighlight::onShow()
@@ -40,7 +41,7 @@ void MouseHighlight::onShow()
   APP->getMap()->setMapStyle(MapBox::MAPSTYLE::Streets, true);
   APP->getMap()->addSource(&source).addLayer(&fills).addLayer(&borders).addLayer(&hover);
   APP->getMap()->center(MapBox::Coordinate(37.830348, -100.486052)).zoom(2);
-  APP->getMap()->addJSListener("mousemove", "MouseMoveDemo", mouseMoveFunction).addJSListener("mouseout", "MouseOutDemo", mouseOutFunction);
+  APP->getMap()->addJSHandler(mouseMove).addJSHandler(mouseOut);
   APP->getMap()->applyMapStyle();
 }
 
@@ -48,5 +49,5 @@ void MouseHighlight::onHide()
 {
   APP->getMap()->removeLayer(&fills).removeLayer(&borders).removeLayer(&hover).removeSource(&source);
   // TODO: is this the most efficient way to unbind a function?
-  APP->getMap()->remJSListener("mousemove", "MouseMoveDemo").remJSListener("mouseout", "MouseOutDemo");
+  APP->getMap()->remJSHandler(mouseMove).remJSHandler(mouseOut);
 }
