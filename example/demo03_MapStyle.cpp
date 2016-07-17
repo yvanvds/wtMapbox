@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "MapStyle.h"
+#include "demo03_MapStyle.h"
 #include "mapboxApplication.h"
 
 MapStyle::MapStyle()

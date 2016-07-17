@@ -1,4 +1,4 @@
-#include "GeoJSONLine.h"
+#include "demo12_GeoJSONLine.h"
 #include "stdafx.h"
 #include "mapboxApplication.h"
 

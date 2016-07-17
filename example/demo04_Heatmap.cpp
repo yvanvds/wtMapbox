@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "Heatmap.h"
+#include "demo04_Heatmap.h"
 #include "mapboxApplication.h"
 
 Heatmap::Heatmap()

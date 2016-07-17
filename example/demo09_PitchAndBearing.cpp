@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "PitchAndBearing.h"
+#include "demo09_PitchAndBearing.h"
 #include "mapboxApplication.h"
 
 PitchAndBearing::PitchAndBearing()

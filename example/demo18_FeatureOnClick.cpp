@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "FeatureOnClick.h"
+#include "demo18_FeatureOnClick.h"
 #include "mapboxApplication.h"
 
 FeatureOnClick::FeatureOnClick()

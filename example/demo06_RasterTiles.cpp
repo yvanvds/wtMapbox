@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "RasterTiles.h"
+#include "demo06_RasterTiles.h"
 #include "mapboxApplication.h"
 
 RasterTiles::RasterTiles()

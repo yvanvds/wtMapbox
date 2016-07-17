@@ -1,4 +1,4 @@
-#include "GeoJSONPoint.h"
+#include "demo14_GeoJSONPoint.h"
 #include "stdafx.h"
 #include "mapboxApplication.h"
 

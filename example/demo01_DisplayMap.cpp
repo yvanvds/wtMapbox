@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "DisplayMap.h"
+#include "demo01_DisplayMap.h"
 #include "mapboxApplication.h"
 
 DisplayMap::DisplayMap()

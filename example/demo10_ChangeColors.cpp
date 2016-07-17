@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "ChangeColors.h"
+#include "demo10_ChangeColors.h"
 #include "mapboxApplication.h"
 
 ChangeColors::ChangeColors()

@@ -1,4 +1,4 @@
-#include "InfoPopup.h"
+#include "demo19_InfoPopup.h"
 #include "stdafx.h"
 #include "mapboxApplication.h"
 

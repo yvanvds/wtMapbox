@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "FeaturesBelowMouse.h"
+#include "demo17_FeaturesBelowMouse.h"
 #include "mapboxApplication.h"
 
 FeaturesBelowMouse::FeaturesBelowMouse()

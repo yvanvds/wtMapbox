@@ -1,4 +1,4 @@
-#include "GeoJSONPoly.h"
+#include "demo13_GeoJSONPoly.h"
 #include "stdafx.h"
 #include "mapboxApplication.h"
 

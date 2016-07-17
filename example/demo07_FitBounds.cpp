@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "FitBounds.h"
+#include "demo07_FitBounds.h"
 #include "mapboxApplication.h"
 
 FitBounds::FitBounds()

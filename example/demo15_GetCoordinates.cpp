@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "GetCoordinates.h"
+#include "demo15_GetCoordinates.h"
 #include "mapboxApplication.h"
 
 GetCoordinates::GetCoordinates()

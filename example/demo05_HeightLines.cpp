@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "HeightLines.h"
+#include "demo05_HeightLines.h"
 #include "mapboxApplication.h"
 
 HeightLines::HeightLines()

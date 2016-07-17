@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "SetLanguage.h"
+#include "demo08_SetLanguage.h"
 #include "mapboxApplication.h"
 
 SetLanguage::SetLanguage()

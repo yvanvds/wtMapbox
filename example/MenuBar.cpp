@@ -4,26 +4,26 @@
 
 // demos
 #include "Demo.h"
-#include "DisplayMap.h"
-#include "CreateClusters.h"
-#include "MapStyle.h"
-#include "Heatmap.h"
-#include "HeightLines.h"
-#include "RasterTiles.h"
-#include "FitBounds.h"
-#include "SetLanguage.h"
-#include "PitchAndBearing.h"
-#include "ChangeColors.h"
-#include "LayerOrder.h"
-#include "GeoJSONLine.h"
-#include "GeoJSONPoly.h"
-#include "MouseHighlight.h"
-#include "GeoJSONPoint.h"
-#include "GetCoordinates.h"
-#include "DisplayPopup.h"
-#include "FeaturesBelowMouse.h"
-#include "FeatureOnClick.h"
-#include "InfoPopup.h"
+#include "demo01_DisplayMap.h"
+#include "demo02_CreateClusters.h"
+#include "demo03_MapStyle.h"
+#include "demo04_Heatmap.h"
+#include "demo05_HeightLines.h"
+#include "demo06_RasterTiles.h"
+#include "demo07_FitBounds.h"
+#include "demo08_SetLanguage.h"
+#include "demo09_PitchAndBearing.h"
+#include "demo10_ChangeColors.h"
+#include "demo11_LayerOrder.h"
+#include "demo12_GeoJSONLine.h"
+#include "demo13_GeoJSONPoly.h"
+#include "demo14_GeoJSONPoint.h"
+#include "demo15_GetCoordinates.h"
+#include "demo16_DisplayPopup.h"
+#include "demo17_FeaturesBelowMouse.h"
+#include "demo18_FeatureOnClick.h"
+#include "demo19_InfoPopup.h"
+#include "demo20_MouseHighlight.h"
 
 MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
 {
@@ -43,13 +43,13 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   cb->addItem("Layer Order");
   cb->addItem("Add a GeoJSON line");
   cb->addItem("Add a GeoJSON polygon");
-  cb->addItem("Mouse Highlight");
   cb->addItem("Draw GeoJSON points");
   cb->addItem("Get coordinates from mouse");
   cb->addItem("Display a Popup");
   cb->addItem("Get features below mouse pointer");
   cb->addItem("Get feature on click");
   cb->addItem("Info in Popup");
+  cb->addItem("Mouse Highlight");
 
   cb->setCurrentIndex(0);
   cb->setMargin(10);
@@ -69,13 +69,13 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   stack->addWidget(new LayerOrder());
   stack->addWidget(new GeoJSONLine());
   stack->addWidget(new GeoJSONPoly());
-  stack->addWidget(new MouseHighlight());
   stack->addWidget(new GeoJSONPoint());
   stack->addWidget(new GetCoordinates());
   stack->addWidget(new DisplayPopup());
   stack->addWidget(new FeaturesBelowMouse());
   stack->addWidget(new FeatureOnClick());
   stack->addWidget(new InfoPopup());
+  stack->addWidget(new MouseHighlight());
 
   cb->changed().connect(std::bind([=]() {
     int choice = cb->currentIndex();

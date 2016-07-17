@@ -78,76 +78,73 @@
     <ClCompile Include="..\source\VideoSource.cpp">
       <Filter>wtMapbox\Source</Filter>
     </ClCompile>
-    <ClCompile Include="CreateClusters.cpp">
-      <Filter>Test Application\demos</Filter>
-    </ClCompile>
-    <ClCompile Include="DisplayMap.cpp">
-      <Filter>Test Application\demos</Filter>
-    </ClCompile>
-    <ClCompile Include="MapStyle.cpp">
-      <Filter>Test Application\demos</Filter>
-    </ClCompile>
-    <ClCompile Include="Heatmap.cpp">
-      <Filter>Test Application\demos</Filter>
-    </ClCompile>
-    <ClCompile Include="HeightLines.cpp">
-      <Filter>Test Application\demos</Filter>
-    </ClCompile>
-    <ClCompile Include="RasterTiles.cpp">
-      <Filter>Test Application\demos</Filter>
-    </ClCompile>
-    <ClCompile Include="FitBounds.cpp">
-      <Filter>Test Application\demos</Filter>
-    </ClCompile>
-    <ClCompile Include="SetLanguage.cpp">
-      <Filter>Test Application\demos</Filter>
-    </ClCompile>
-    <ClCompile Include="PitchAndBearing.cpp">
-      <Filter>Test Application\demos</Filter>
-    </ClCompile>
-    <ClCompile Include="ChangeColors.cpp">
-      <Filter>Test Application\demos</Filter>
-    </ClCompile>
-    <ClCompile Include="LayerOrder.cpp">
-      <Filter>Test Application\demos</Filter>
-    </ClCompile>
     <ClCompile Include="..\source\GeoJSON.cpp">
       <Filter>wtMapbox</Filter>
-    </ClCompile>
-    <ClCompile Include="GeoJSONLine.cpp">
-      <Filter>Test Application\demos</Filter>
-    </ClCompile>
-    <ClCompile Include="GeoJSONPoly.cpp">
-      <Filter>Test Application\demos</Filter>
-    </ClCompile>
-    <ClCompile Include="MouseHighlight.cpp">
-      <Filter>Test Application\demos</Filter>
-    </ClCompile>
-    <ClCompile Include="GeoJSONPoint.cpp">
-      <Filter>Test Application\demos</Filter>
     </ClCompile>
     <ClCompile Include="..\source\Popup.cpp">
       <Filter>wtMapbox</Filter>
     </ClCompile>
-    <ClCompile Include="DisplayPopup.cpp">
-      <Filter>Test Application\demos</Filter>
-    </ClCompile>
-    <ClCompile Include="FeaturesBelowMouse.cpp">
-      <Filter>Test Application\demos</Filter>
-    </ClCompile>
-    <ClCompile Include="AddImage.cpp">
-      <Filter>Test Application\demos</Filter>
-    </ClCompile>
     <ClCompile Include="..\include\JSHandler.cpp">
       <Filter>wtMapbox</Filter>
     </ClCompile>
-    <ClCompile Include="GetCoordinates.cpp">
+    <ClCompile Include="demo09_PitchAndBearing.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
-    <ClCompile Include="FeatureOnClick.cpp">
+    <ClCompile Include="demo06_RasterTiles.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
-    <ClCompile Include="InfoPopup.cpp">
+    <ClCompile Include="demo08_SetLanguage.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="demo03_MapStyle.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="demo05_HeightLines.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="demo04_Heatmap.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="demo07_FitBounds.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="demo02_CreateClusters.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="demo01_DisplayMap.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="demo10_ChangeColors.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="demo11_LayerOrder.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="demo12_GeoJSONLine.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="demo13_GeoJSONPoly.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="demo14_GeoJSONPoint.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="demo15_GetCoordinates.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="demo16_DisplayPopup.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="demo17_FeaturesBelowMouse.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="demo18_FeatureOnClick.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="demo19_InfoPopup.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="demo20_MouseHighlight.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
   </ItemGroup>
@@ -218,80 +215,77 @@
     <ClInclude Include="..\include\VideoSource.h">
       <Filter>wtMapbox\Source</Filter>
     </ClInclude>
-    <ClInclude Include="CreateClusters.h">
-      <Filter>Test Application\demos</Filter>
-    </ClInclude>
     <ClInclude Include="Demo.h">
       <Filter>Test Application\demos</Filter>
     </ClInclude>
-    <ClInclude Include="DisplayMap.h">
-      <Filter>Test Application\demos</Filter>
-    </ClInclude>
-    <ClInclude Include="MapStyle.h">
-      <Filter>Test Application\demos</Filter>
-    </ClInclude>
-    <ClInclude Include="Heatmap.h">
-      <Filter>Test Application\demos</Filter>
-    </ClInclude>
-    <ClInclude Include="HeightLines.h">
-      <Filter>Test Application\demos</Filter>
-    </ClInclude>
-    <ClInclude Include="RasterTiles.h">
-      <Filter>Test Application\demos</Filter>
-    </ClInclude>
-    <ClInclude Include="FitBounds.h">
-      <Filter>Test Application\demos</Filter>
-    </ClInclude>
-    <ClInclude Include="SetLanguage.h">
-      <Filter>Test Application\demos</Filter>
-    </ClInclude>
-    <ClInclude Include="PitchAndBearing.h">
-      <Filter>Test Application\demos</Filter>
-    </ClInclude>
-    <ClInclude Include="ChangeColors.h">
-      <Filter>Test Application\demos</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h" />
-    <ClInclude Include="LayerOrder.h">
-      <Filter>Test Application\demos</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\GeoJSON.h">
       <Filter>wtMapbox</Filter>
-    </ClInclude>
-    <ClInclude Include="GeoJSONLine.h">
-      <Filter>Test Application\demos</Filter>
-    </ClInclude>
-    <ClInclude Include="GeoJSONPoly.h">
-      <Filter>Test Application\demos</Filter>
-    </ClInclude>
-    <ClInclude Include="MouseHighlight.h">
-      <Filter>Test Application\demos</Filter>
-    </ClInclude>
-    <ClInclude Include="GeoJSONPoint.h">
-      <Filter>Test Application\demos</Filter>
-    </ClInclude>
-    <ClInclude Include="GetCoordinates.h">
-      <Filter>Test Application\demos</Filter>
     </ClInclude>
     <ClInclude Include="..\include\Popup.h">
       <Filter>wtMapbox</Filter>
     </ClInclude>
-    <ClInclude Include="DisplayPopup.h">
-      <Filter>Test Application\demos</Filter>
-    </ClInclude>
-    <ClInclude Include="FeaturesBelowMouse.h">
-      <Filter>Test Application\demos</Filter>
-    </ClInclude>
-    <ClInclude Include="AddImage.h">
-      <Filter>Test Application\demos</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\JSHandler.h">
       <Filter>wtMapbox</Filter>
     </ClInclude>
-    <ClInclude Include="FeatureOnClick.h">
+    <ClInclude Include="demo09_PitchAndBearing.h">
       <Filter>Test Application\demos</Filter>
     </ClInclude>
-    <ClInclude Include="InfoPopup.h">
+    <ClInclude Include="demo06_RasterTiles.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo08_SetLanguage.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo03_MapStyle.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo05_HeightLines.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo04_Heatmap.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo07_FitBounds.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo01_DisplayMap.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo02_CreateClusters.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo10_ChangeColors.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo11_LayerOrder.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo12_GeoJSONLine.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo13_GeoJSONPoly.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo14_GeoJSONPoint.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo15_GetCoordinates.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo16_DisplayPopup.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo17_FeaturesBelowMouse.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo18_FeatureOnClick.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo19_InfoPopup.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo20_MouseHighlight.h">
       <Filter>Test Application\demos</Filter>
     </ClInclude>
   </ItemGroup>
