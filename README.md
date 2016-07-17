@@ -22,3 +22,8 @@ For a quick look, i recommend using the latest github release. For building from
 * Request a mapbox api key at https://www.mapbox.com/help/create-api-access-token/
 * Copy website/wt_config.xml_orig to wt_config.xml and open this file in a text editor to add your api key
 * Open the solution and open the properties. Check folder locations for debug and release. check the Additional Include Directories and Additional Library Directories.
+
+To execute the program without VS, use the console and navigate to the website directory. Type 
+    example.exe --docroot . --http-address 0.0.0.0 --http-port 8080 -c wt_config.xml
+    
+To view the website itself, open your browser and navigate to http://127.0.0.1:8080
