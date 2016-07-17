@@ -1,0 +1,14 @@
+<server>
+    <application-settings location="*">
+	<properties>
+
+	    <!-- You need to register at mapbox for this to work, and enter
+                 there the same values as you do here. -->
+
+		<property name="mapbox_api_key">
+			your mapbox api key
+		</property>
+
+	</properties>
+    </application-settings>
+</server>

@@ -8,7 +8,7 @@ CreateClusters::CreateClusters() {
   source.cluster(50, 14);
 
   unclusteredLayer.set(&source);
-  unclusteredLayer.icon.image("'marker-15'");
+  unclusteredLayer.icon.image("marker-15");
 
   clusterLayer[0].set(&source);
   clusterLayer[0].color(Wt::WColor("#f28cb1")).radius(18);
@@ -23,8 +23,8 @@ CreateClusters::CreateClusters() {
   clusterLayer[2].filter("['all', ['>=', 'point_count', 0], ['<', 'point_count', 20]]");
 
   clusterCountLayer.set(&source);
-  clusterCountLayer.text.label("'{point_count}'").size(12);
-  clusterCountLayer.text.font("[\"DIN Offc Pro Medium\", \"Arial Unicode MS Bold\"]");
+  clusterCountLayer.text.label("{point_count}").size(12);
+  clusterCountLayer.text.font("['DIN Offc Pro Medium', 'Arial Unicode MS Bold']");
 
   unclusteredCheck = new Wt::WCheckBox("Show unclustered", this);
   unclusteredCheck->setMargin(10);
