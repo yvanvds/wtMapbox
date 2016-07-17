@@ -147,6 +147,9 @@
     <ClCompile Include="demo20_MouseHighlight.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
+    <ClCompile Include="demo21_DataDrivenColors.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -286,6 +289,9 @@
       <Filter>Test Application\demos</Filter>
     </ClInclude>
     <ClInclude Include="demo20_MouseHighlight.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo21_DataDrivenColors.h">
       <Filter>Test Application\demos</Filter>
     </ClInclude>
   </ItemGroup>

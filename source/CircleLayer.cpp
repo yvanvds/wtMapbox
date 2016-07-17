@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "CircleLayer.h"
 #include "Conversions.h"
+#include <Wt/Json/Serializer>
 
 namespace MapBox {
 
@@ -46,6 +47,19 @@ namespace MapBox {
     setPaint("circle-translate-anchor", ToScript(anchor));
     translate_ = offset;
     anchor_ = anchor;
+    return *this;
+  }
+
+  CircleLayer & CircleLayer::radius(C Wt::Json::Object & obj) {
+    jsonRadius = Wt::Json::serialize(obj);
+    setPaint("circle-radius", jsonRadius);
+    return *this;
+  }
+
+  CircleLayer & CircleLayer::color(C Wt::Json::Object & obj) {
+    jsonColor = Wt::Json::serialize(obj);
+    setPaint("circle-color", jsonColor);
+    Wt::log(jsonColor.toUTF8());
     return *this;
   }
 

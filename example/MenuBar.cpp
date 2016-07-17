@@ -24,6 +24,7 @@
 #include "demo18_FeatureOnClick.h"
 #include "demo19_InfoPopup.h"
 #include "demo20_MouseHighlight.h"
+#include "demo21_DataDrivenColors.h"
 
 MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
 {
@@ -50,6 +51,7 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   cb->addItem("Get feature on click");
   cb->addItem("Info in Popup");
   cb->addItem("Mouse Highlight");
+  cb->addItem("Data Driven Colors");
 
   cb->setCurrentIndex(0);
   cb->setMargin(10);
@@ -76,6 +78,7 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   stack->addWidget(new FeatureOnClick());
   stack->addWidget(new InfoPopup());
   stack->addWidget(new MouseHighlight());
+  stack->addWidget(new DataDrivenColors());
 
   cb->changed().connect(std::bind([=]() {
     int choice = cb->currentIndex();

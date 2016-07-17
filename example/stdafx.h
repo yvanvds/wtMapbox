@@ -19,5 +19,8 @@
 #include <Wt/WGridLayout>
 #include <Wt/WHBoxLayout>
 #include <Wt/WVBoxLayout>
+#include <Wt/Json/Array>
+#include <Wt/Json/Value>
+#include <Wt/Json/Object>
 
 #define APP ((mapboxApplication*)Wt::WApplication::instance())

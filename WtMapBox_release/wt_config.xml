@@ -1,0 +1,14 @@
+<server>
+    <application-settings location="*">
+	<properties>
+
+	    <!-- You need to register at google for this to work, and enter
+                 there the same values as you do here. -->
+
+		<property name="mapbox_api_key">
+			pk.eyJ1IjoieXZhbnZkcyIsImEiOiJjaWx0aTI5MWcwMDM5dnVtNWFlZmc5MGxzIn0.tBlvXYNOU3Pj6UGhohKYgw
+		</property>
+
+	</properties>
+    </application-settings>
+</server>

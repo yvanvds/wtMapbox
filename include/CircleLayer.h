@@ -22,6 +22,10 @@ namespace MapBox {
     C Coordinate & translation() C { return translate_; }
     ANCHOR anchor() C { return anchor_; }
 
+    // more advanced options are possible when using json objects. See mapbox api for more info
+    CircleLayer & radius(C Wt::Json::Object & obj);
+    CircleLayer & color (C Wt::Json::Object & obj);
+
   private:
 
     // properties to remember for easy retrieval
@@ -32,6 +36,7 @@ namespace MapBox {
     float      blur_     ;
     float      opacity_  ;
 
+    Wt::WString jsonRadius, jsonColor;
   };
 
 } // namespace MapBox
