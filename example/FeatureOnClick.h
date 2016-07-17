@@ -17,6 +17,8 @@ private:
   MapBox::Coordinate coordinate;
   boost::signals2::connection connection;
 
+  MapBox::JSHandler mouseMove;
+
   Wt::WText * text;
   MapBox::Popup * popup;
 };

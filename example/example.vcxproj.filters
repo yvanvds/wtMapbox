@@ -147,6 +147,9 @@
     <ClCompile Include="FeatureOnClick.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
+    <ClCompile Include="InfoPopup.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -286,6 +289,9 @@
       <Filter>wtMapbox</Filter>
     </ClInclude>
     <ClInclude Include="FeatureOnClick.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="InfoPopup.h">
       <Filter>Test Application\demos</Filter>
     </ClInclude>
   </ItemGroup>

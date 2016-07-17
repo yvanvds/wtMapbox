@@ -23,6 +23,7 @@
 #include "DisplayPopup.h"
 #include "FeaturesBelowMouse.h"
 #include "FeatureOnClick.h"
+#include "InfoPopup.h"
 
 MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
 {
@@ -48,7 +49,8 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   cb->addItem("Display a Popup");
   cb->addItem("Get features below mouse pointer");
   cb->addItem("Get feature on click");
-  
+  cb->addItem("Info in Popup");
+
   cb->setCurrentIndex(0);
   cb->setMargin(10);
 
@@ -73,6 +75,7 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   stack->addWidget(new DisplayPopup());
   stack->addWidget(new FeaturesBelowMouse());
   stack->addWidget(new FeatureOnClick());
+  stack->addWidget(new InfoPopup());
 
   cb->changed().connect(std::bind([=]() {
     int choice = cb->currentIndex();

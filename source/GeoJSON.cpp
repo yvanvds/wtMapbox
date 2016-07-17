@@ -55,6 +55,18 @@ namespace MapBox {
     object["coordinates"] = Json::Value(Json::ArrayType);
   }
 
+  GPoint::GPoint(C Coordinate & pos)
+    : GGeometryObject("Point") {
+    object["coordinates"] = Json::Value(Json::ArrayType);
+    set(pos);
+  }
+
+  GPoint::GPoint(float latitude, float longitude) 
+    : GGeometryObject("Point") {
+    object["coordinates"] = Json::Value(Json::ArrayType);
+    set(latitude, longitude);
+  }
+
   void GPoint::set(C Coordinate & pos) {
     Json::Array& arr = object["coordinates"];
     if (!arr.empty()) arr.clear();
@@ -233,6 +245,21 @@ namespace MapBox {
   GFeature & GFeature::properties(C Json::Object & obj) {
     object["properties"] = Json::Value(Json::ObjectType);
     ((Json::Object&)object["properties"]) = obj;
+    return *this;
+  }
+
+  GFeature & GFeature::setProperty(C Wt::WString & name, C Wt::WString & value) {
+    if (object.get("properties").isNull()) {
+      object["properties"] = Json::Value(Json::ObjectType);
+    }
+    Json::Object & obj = object["properties"];
+    obj[name.toUTF8()] = Json::Value(value);
+    return *this;
+  }
+
+  GFeature & GFeature::clear() {
+    object["geometry"] = Json::NullType;
+    object["properties"] = Json::NullType;
     return *this;
   }
 

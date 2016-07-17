@@ -14,6 +14,13 @@ FeatureOnClick::FeatureOnClick()
   text = new Wt::WText(this);
   
   popup = new MapBox::Popup(this);
+
+  mouseMove.trigger(MapBox::EVENT::MouseMove).code(
+    "function(e) {"
+    "  var features = map.queryRenderedFeatures(e.point, { layers: ['" + layer.id() + "'] });"
+    "  " + APP->getMap()->jsRef() + ".map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';"
+    "}"
+  );
 }
 
 void FeatureOnClick::onShow()
@@ -44,6 +51,9 @@ void FeatureOnClick::onShow()
   }, std::placeholders::_1));
   APP->getMap()->enableClickedFeature(true);
 
+  // add mousemove handler to change cursor on features
+  APP->getMap()->addJSHandler(mouseMove);
+
   APP->getMap()->applyMapStyle();
 }
 
@@ -52,5 +62,6 @@ void FeatureOnClick::onHide()
   APP->getMap()->clicked().disconnect(connection);
   APP->getMap()->removeLayer(&layer).removeSource(&source);
   APP->getMap()->enableClickedFeature(false);
+  APP->getMap()->remJSHandler(mouseMove);
   popup->remove();
 }

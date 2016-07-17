@@ -180,6 +180,7 @@
     <ClCompile Include="GetCoordinates.cpp" />
     <ClCompile Include="Heatmap.cpp" />
     <ClCompile Include="HeightLines.cpp" />
+    <ClCompile Include="InfoPopup.cpp" />
     <ClCompile Include="LayerOrder.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mapboxApplication.cpp" />
@@ -232,6 +233,7 @@
     <ClInclude Include="Demo.h" />
     <ClInclude Include="DisplayMap.h" />
     <ClInclude Include="Heatmap.h" />
+    <ClInclude Include="InfoPopup.h" />
     <ClInclude Include="LayerOrder.h" />
     <ClInclude Include="mapboxApplication.h" />
     <ClInclude Include="MapStyle.h" />

@@ -41,6 +41,8 @@ namespace MapBox {
   class GPoint : public GGeometryObject {
   public:
     GPoint();
+    GPoint(C Coordinate & pos);
+    GPoint(float latitude, float longitude);
     void set(C Coordinate & pos);
     void set(float latitude, float longitude);
   };
@@ -97,6 +99,8 @@ namespace MapBox {
     GFeature & geometry(C GGeometryObject & obj);
     GFeature & geometry(C GGeometryCollection& obj);
     GFeature & properties(C Wt::Json::Object & obj);
+    GFeature & setProperty(C Wt::WString & name, C Wt::WString & value);
+    GFeature & clear();
 
     C Wt::Json::Object & properties();
   };
