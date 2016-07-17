@@ -2,7 +2,7 @@
 #include "Coordinate.h"
 #include "BackgroundLayer.h"
 #include "Conversions.h"
-
+#include "GeoJSON.h"
 
 
 namespace MapBox {
@@ -330,6 +330,37 @@ namespace MapBox {
       mouseMoved_ = new Wt::JSignal<Coordinate>(this, "mousemove");
     }
     return *mouseMoved_;
+  }
+
+  Wt::JSignal<Wt::WString> & Map::clickedFeature(C Wt::WString & layers) {
+    if (!clickedFeature_) {
+      clickedFeature_ = new Wt::JSignal<Wt::WString>(this, "featureclick");
+    }
+    
+    // add javascript code
+    std::stringstream stream;
+    stream << jsRef() << ".clickedFeature = function(e) {"
+      << "var features = " << jsRef() << ".map.queryRenderedFeatures(e.point, {"
+      << "layers: [" + Quote(layers.toUTF8()) + "]"
+      << "});"
+      << "if(!features.length) { return; }"
+      << clickedFeature_->createCall("JSON.stringify(features[0])") << ";"
+      << "};";
+    doOnLoadJavaScript(stream.str());
+
+    return *clickedFeature_;
+  }
+
+  Map & Map::enableClickedFeature(bool enable) {
+    std::stringstream stream;
+    if (enable) {
+      stream << jsRef() << ".map.on('click', " << jsRef() << ".clickedFeature);";
+    }
+    else {
+      stream << jsRef() << ".map.off('click', " << jsRef() << ".clickedFeature);";
+    }
+    doOnLoadJavaScript(stream.str());
+    return *this;
   }
 
   void Map::streamJSListener(const Wt::JSignal<Coordinate> & signal, Wt::WString signalName, Wt::WStringStream & stream) {

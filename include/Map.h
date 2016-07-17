@@ -84,6 +84,20 @@ namespace MapBox {
     Wt::JSignal<Coordinate> & doubleClicked() { return doubleClicked_; }
     Wt::JSignal<Coordinate> & mouseMoved   ();
 
+    // 
+    /* 
+    A signal to retrieve a feature from the specified layer on mouse click.
+
+    This signal must be explicitly enabled on the client side.
+    It is also a good idea to disable the signal when you're done, so
+    to minimize traffic.
+
+    At any rate it should be disabled before the mentioned layer is removed.
+    */
+    Wt::JSignal<Wt::WString> & clickedFeature(C Wt::WString & layers);
+    
+    Map & enableClickedFeature(bool enable);
+
     // interactions
     // Should be one of I_DRAGPAN, I_BOXZOOM, ...
     void enableInteraction(const Wt::WString & interaction, bool value);
@@ -91,6 +105,8 @@ namespace MapBox {
     // client side event handler
     Map & addJSHandler(C JSHandler & handler);
     Map & remJSHandler(C JSHandler & handler);
+
+
 
     // sources
     Map & addSource   (Source * source);
@@ -114,6 +130,7 @@ namespace MapBox {
     Wt::JSignal<Coordinate> clicked_;
     Wt::JSignal<Coordinate> doubleClicked_;
     Wt::JSignal<Coordinate> * mouseMoved_;
+    Wt::JSignal<Wt::WString> * clickedFeature_;
 
     std::vector<Wt::WString> additions_;
     std::vector<Wt::WString> onLoadAdditions_;

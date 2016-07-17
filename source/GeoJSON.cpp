@@ -1,6 +1,7 @@
 #include "GeoJSON.h"
 #include <Wt/Json/Value>
 #include <Wt/Json/Array>
+#include <Wt/Json/Parser>
 
 using namespace Wt;
 
@@ -18,6 +19,17 @@ namespace MapBox {
     arr.push_back(bounds.min.latitude());
     arr.push_back(bounds.max.longitude());
     arr.push_back(bounds.max.latitude());
+  }
+
+  bool GeoJSONObject::set(C Wt::WString & content) {
+    try {
+      Wt::Json::parse(content.toUTF8(), object);
+    } catch (std::exception & e) {
+      std::cerr << "Exception: " << e.what() << std::endl;
+      return false;
+    }
+
+    return true;
   }
 
   GGeometryObject::GGeometryObject(C std::string & type)
@@ -222,6 +234,10 @@ namespace MapBox {
     object["properties"] = Json::Value(Json::ObjectType);
     ((Json::Object&)object["properties"]) = obj;
     return *this;
+  }
+
+  C Wt::Json::Object & GFeature::properties() {
+    return object["properties"];
   }
 
   GFeatureCollection::GFeatureCollection()

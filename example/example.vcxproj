@@ -171,13 +171,13 @@
     <ClCompile Include="CreateClusters.cpp" />
     <ClCompile Include="DisplayMap.cpp" />
     <ClCompile Include="DisplayPopup.cpp" />
+    <ClCompile Include="FeatureOnClick.cpp" />
     <ClCompile Include="FeaturesBelowMouse.cpp" />
     <ClCompile Include="FitBounds.cpp" />
     <ClCompile Include="GeoJSONLine.cpp" />
     <ClCompile Include="GeoJSONPoint.cpp" />
     <ClCompile Include="GeoJSONPoly.cpp" />
     <ClCompile Include="GetCoordinates.cpp" />
-    <ClCompile Include="GetCoordinatescpp.cpp" />
     <ClCompile Include="Heatmap.cpp" />
     <ClCompile Include="HeightLines.cpp" />
     <ClCompile Include="LayerOrder.cpp" />
@@ -220,6 +220,7 @@
     <ClInclude Include="AddImage.h" />
     <ClInclude Include="ChangeColors.h" />
     <ClInclude Include="DisplayPopup.h" />
+    <ClInclude Include="FeatureOnClick.h" />
     <ClInclude Include="FeaturesBelowMouse.h" />
     <ClInclude Include="FitBounds.h" />
     <ClInclude Include="GeoJSONLine.h" />

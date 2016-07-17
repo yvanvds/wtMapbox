@@ -23,6 +23,8 @@ namespace MapBox {
     
     void setBoundingBox(C Bounds & bounds);
     C Wt::Json::Object & getObject() C { return object; }
+
+    bool set(C Wt::WString & content);
   protected:
     Wt::Json::Object object;
   };
@@ -95,6 +97,8 @@ namespace MapBox {
     GFeature & geometry(C GGeometryObject & obj);
     GFeature & geometry(C GGeometryCollection& obj);
     GFeature & properties(C Wt::Json::Object & obj);
+
+    C Wt::Json::Object & properties();
   };
 
   class GFeatureCollection : public GeoJSONObject {

@@ -126,10 +126,6 @@
     <ClCompile Include="GeoJSONPoint.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
-    <ClCompile Include="GetCoordinatescpp.cpp">
-      <Filter>Test Application\demos</Filter>
-    </ClCompile>
-    <ClCompile Include="GetCoordinates.cpp" />
     <ClCompile Include="..\source\Popup.cpp">
       <Filter>wtMapbox</Filter>
     </ClCompile>
@@ -144,6 +140,12 @@
     </ClCompile>
     <ClCompile Include="..\include\JSHandler.cpp">
       <Filter>wtMapbox</Filter>
+    </ClCompile>
+    <ClCompile Include="GetCoordinates.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="FeatureOnClick.cpp">
+      <Filter>Test Application\demos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -282,6 +284,9 @@
     </ClInclude>
     <ClInclude Include="..\include\JSHandler.h">
       <Filter>wtMapbox</Filter>
+    </ClInclude>
+    <ClInclude Include="FeatureOnClick.h">
+      <Filter>Test Application\demos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
