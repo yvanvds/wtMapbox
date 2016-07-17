@@ -5,6 +5,7 @@
 
 #include "Coordinate.h"
 #include "Layer.h"
+#include "JSHandler.h"
 
 namespace MapBox {
 
@@ -87,9 +88,9 @@ namespace MapBox {
     // Should be one of I_DRAGPAN, I_BOXZOOM, ...
     void enableInteraction(const Wt::WString & interaction, bool value);
 
-    // client side event handling
-    Map & addJSListener(C Wt::WString & event, C Wt::WString & funcName, C Wt::WString & code);
-    Map & remJSListener(C Wt::WString & event, C Wt::WString & funcName);
+    // client side event handler
+    Map & addJSHandler(C JSHandler & handler);
+    Map & remJSHandler(C JSHandler & handler);
 
     // sources
     Map & addSource   (Source * source);

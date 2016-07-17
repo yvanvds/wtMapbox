@@ -308,19 +308,19 @@ namespace MapBox {
     return *this;
   }
 
-  Map & Map::addJSListener(C Wt::WString & event, C Wt::WString & funcName, C Wt::WString & code) {
+  Map & Map::addJSHandler(C JSHandler & handler) {
     std::stringstream stream;
-    stream << jsRef() << "." << funcName << " = " << code << ";";
-    stream << jsRef() << ".map.on(\'" << event << "', "
-      << jsRef() << "." << funcName << ");";
+    stream << jsRef() << "." << handler.id().toUTF8() << " = " << handler.code().toUTF8() << ";";
+    stream << jsRef() << ".map.on(" << ToScript(handler.trigger()) << ", "
+      << jsRef() << "." << handler.id().toUTF8() << ");";
     doGmJavaScript(stream.str());
     return *this;
   }
 
-  Map & Map::remJSListener(C Wt::WString & event, C Wt::WString & funcName) {
+  Map & Map::remJSHandler(C JSHandler & handler) {
     std::stringstream stream;
-    stream << jsRef() << ".map.off(\'" << event << "', "
-      << jsRef() << "." << funcName << ");";
+    stream << jsRef() << ".map.off(" << ToScript(handler.trigger()) << ", "
+      << jsRef() << "." << handler.id().toUTF8() << ");";
     doGmJavaScript(stream.str());
     return *this;
   }

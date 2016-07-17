@@ -139,6 +139,12 @@
     <ClCompile Include="FeaturesBelowMouse.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
+    <ClCompile Include="AddImage.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\include\JSHandler.cpp">
+      <Filter>wtMapbox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -270,6 +276,12 @@
     </ClInclude>
     <ClInclude Include="FeaturesBelowMouse.h">
       <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="AddImage.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\JSHandler.h">
+      <Filter>wtMapbox</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -22,6 +22,7 @@
 
 // other
 #include "Popup.h"
+#include "JSHandler.h"
 
 // GeoJSON
 #include "GeoJSON.h"

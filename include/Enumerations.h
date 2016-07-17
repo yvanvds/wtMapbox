@@ -71,5 +71,37 @@ namespace MapBox {
     lowercase,
   };
 
-  
+  enum class EVENT {
+    WebGlContextLost,
+    WebGlContextRestored,
+    TouchCancel,
+    Click,
+    MouseMove,
+    TouchMove,
+    MouseOut,
+    MoveEnd,
+    TouchStart,
+    Load,
+    ContextMenu,
+    DblClick,
+    MoveStart,
+    Render,
+    Move,
+    Mousedown,
+    MouseUp,
+    TouchEnd,
+    ZoomStart,
+    Zoom,
+    ZoomEnd,
+    BoxZoomEnd,
+    BoxZoomStart,
+    BoxZoomCancel,
+    Rotate,
+    RotateEnd,
+    RotateStart,
+    DragStart,
+    Drag,
+    DragEnd,
+    Pitch,
+  };
 }

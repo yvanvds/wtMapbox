@@ -13,5 +13,5 @@ public:
   virtual void onHide();
 
 private:
-  Wt::WString mouseMoveFunction;
+  MapBox::JSHandler mouseMove;
 };

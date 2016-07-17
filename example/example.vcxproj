@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\include\JSHandler.cpp" />
     <ClCompile Include="..\include\SymbolLayer.cpp" />
     <ClCompile Include="..\source\BackgroundLayer.cpp" />
     <ClCompile Include="..\source\CircleLayer.cpp" />
@@ -165,6 +166,7 @@
     <ClCompile Include="..\source\Source.cpp" />
     <ClCompile Include="..\source\VectorSource.cpp" />
     <ClCompile Include="..\source\VideoSource.cpp" />
+    <ClCompile Include="AddImage.cpp" />
     <ClCompile Include="ChangeColors.cpp" />
     <ClCompile Include="CreateClusters.cpp" />
     <ClCompile Include="DisplayMap.cpp" />
@@ -203,6 +205,7 @@
     <ClInclude Include="..\include\GeoJSON.h" />
     <ClInclude Include="..\include\GeoJSONSource.h" />
     <ClInclude Include="..\include\ImageSource.h" />
+    <ClInclude Include="..\include\JSHandler.h" />
     <ClInclude Include="..\include\Layer.h" />
     <ClInclude Include="..\include\LineLayer.h" />
     <ClInclude Include="..\include\Map.h" />
@@ -214,6 +217,7 @@
     <ClInclude Include="..\include\VectorSource.h" />
     <ClInclude Include="..\include\VideoSource.h" />
     <ClInclude Include="..\include\wtMapbox.h" />
+    <ClInclude Include="AddImage.h" />
     <ClInclude Include="ChangeColors.h" />
     <ClInclude Include="DisplayPopup.h" />
     <ClInclude Include="FeaturesBelowMouse.h" />
