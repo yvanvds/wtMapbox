@@ -381,7 +381,7 @@ namespace MapBox {
   Map & Map::add(Source * source) {
     std::stringstream stream;
     stream << jsRef() + ".map.addSource(";
-    stream << source->render();
+    stream << source->render(this);
     stream << ");\n";
     doOnLoadJavaScript(stream.str());
     return *this;

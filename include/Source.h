@@ -7,6 +7,7 @@
 
 namespace MapBox {
   class Coordinate;
+  class Map;
 
   class Source
   {
@@ -18,13 +19,14 @@ namespace MapBox {
     
     virtual Source & set(C Wt::WString & url);
 
-    virtual Wt::WString render() = 0;
+    virtual Wt::WString render(Map * parent) = 0;
 
   protected:
     SOURCETYPE type_;
     Wt::WString id_;
     Wt::WString url_;
 
+    Map * parent_;
   };
 
 } // namespace MapBox

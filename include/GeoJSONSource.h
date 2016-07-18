@@ -25,7 +25,7 @@ namespace MapBox {
     int  clusterRadius () { return clusterRadius_ ; }
     int  clusterMaxZoom() { return clusterMaxZoom_; }
 
-    virtual Wt::WString render();
+    virtual Wt::WString render(Map * parent);
 
   private:
     GeoJSONObject * data_;

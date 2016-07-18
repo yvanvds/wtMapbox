@@ -7,7 +7,7 @@ namespace MapBox {
   public:
     VectorSource();
 
-    virtual Wt::WString render();
+    virtual Wt::WString render(Map * parent);
 
   };
 

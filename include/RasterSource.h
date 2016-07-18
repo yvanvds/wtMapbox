@@ -10,7 +10,7 @@ namespace MapBox {
 
     RasterSource & tileSize(int value); int tileSize() C { return tileSize_; }
 
-    virtual Wt::WString render();
+    virtual Wt::WString render(Map * parent);
 
   private:
     int tileSize_;

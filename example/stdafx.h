@@ -22,5 +22,6 @@
 #include <Wt/Json/Array>
 #include <Wt/Json/Value>
 #include <Wt/Json/Object>
+#include <Wt/WTimer>
 
 #define APP ((mapboxApplication*)Wt::WApplication::instance())

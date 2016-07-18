@@ -1,5 +1,6 @@
 #include "ImageSource.h"
 #include "Conversions.h"
+#include "Map.h"
 
 namespace MapBox {
 
@@ -16,8 +17,10 @@ namespace MapBox {
     return *this;
   }
 
-  Wt::WString ImageSource::render()
+  Wt::WString ImageSource::render(Map * parent)
   {
+    parent_ = parent;
+
     std::stringstream stream;
     stream
       << "'" << id_ << "', {\n"

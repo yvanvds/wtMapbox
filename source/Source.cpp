@@ -1,5 +1,7 @@
 #include "Source.h"
 #include "Coordinate.h"
+#include "Conversions.h"
+#include "Map.h"
 
 #include <sstream>
 
@@ -26,12 +28,24 @@ namespace MapBox {
   Source::Source(SOURCETYPE type) 
     : type_(type)
     , id_(getNextSourceID())
+    , parent_(nullptr)
   {
 
   }
 
   Source & Source::set(const Wt::WString & url) {
     url_ = url;
+
+    if (parent_ != nullptr) {
+      // map is already rendered. Change url on client.
+      std::stringstream stream;
+      stream << "try {"
+        << parent_->jsRef() << ".map.getSource(" << Quote(id()) << ")"
+        << ".setData(" << Quote(url) << ");"
+        << "} catch(err) {}";
+      parent_->doJavaScript(stream.str());
+    }
+
     return *this;
   }
 

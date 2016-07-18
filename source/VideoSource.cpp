@@ -1,6 +1,7 @@
 #include "VideoSource.h"
 #include "Enumerations.h"
 #include "Conversions.h"
+#include "Map.h"
 
 namespace MapBox {
 
@@ -32,8 +33,10 @@ namespace MapBox {
     return *this;
   }
 
-  Wt::WString VideoSource::render()
+  Wt::WString VideoSource::render(Map * parent)
   {
+    parent_ = parent;
+
     std::stringstream stream;
     stream
       << "'" << id_ << "', {\n"

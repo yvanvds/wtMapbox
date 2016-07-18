@@ -1,5 +1,6 @@
 #include "GeoJSONSource.h"
 #include <Wt/Json/Serializer>
+#include "Map.h"
 
 namespace MapBox {
 
@@ -39,7 +40,9 @@ namespace MapBox {
     return *this;
   }
 
-  Wt::WString GeoJSONSource::render() {
+  Wt::WString GeoJSONSource::render(Map * parent) {
+    parent_ = parent;
+
     std::stringstream stream;
     stream
       << "'" << id_ << "', {\n"

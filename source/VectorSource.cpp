@@ -1,4 +1,5 @@
 #include "VectorSource.h"
+#include "Map.h"
 
 MapBox::VectorSource::VectorSource()
   : Source(SOURCETYPE::Vector)
@@ -6,8 +7,10 @@ MapBox::VectorSource::VectorSource()
 
 }
 
-Wt::WString MapBox::VectorSource::render()
+Wt::WString MapBox::VectorSource::render(Map * parent)
 {
+  parent_ = parent;
+
   std::stringstream stream;
   stream
     << "'" << id_ << "', {\n"

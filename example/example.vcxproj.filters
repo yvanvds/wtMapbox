@@ -156,6 +156,9 @@
     <ClCompile Include="Demo23_AddVideo.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
+    <ClCompile Include="demo24_RealtimeData.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -304,6 +307,9 @@
       <Filter>Test Application\demos</Filter>
     </ClInclude>
     <ClInclude Include="demo23_AddVideo.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo24_RealtimeData.h">
       <Filter>Test Application\demos</Filter>
     </ClInclude>
   </ItemGroup>

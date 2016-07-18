@@ -12,7 +12,7 @@ namespace MapBox {
     VideoSource & add(C Wt::WString & url);
     VideoSource & coordinates(C Coordinate & topLeft, C Coordinate & topRight, C Coordinate & bottomRight, C Coordinate & bottomLeft);
 
-    virtual Wt::WString render();
+    virtual Wt::WString render(Map * parent);
 
   private:
     Coordinate topLeft, topRight, bottomRight, bottomLeft;
