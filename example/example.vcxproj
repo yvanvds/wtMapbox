@@ -182,6 +182,8 @@
     <ClCompile Include="demo19_InfoPopup.cpp" />
     <ClCompile Include="demo11_LayerOrder.cpp" />
     <ClCompile Include="demo21_DataDrivenColors.cpp" />
+    <ClCompile Include="demo22_AddImage.cpp" />
+    <ClCompile Include="Demo23_AddVideo.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mapboxApplication.cpp" />
     <ClCompile Include="demo03_MapStyle.cpp" />
@@ -235,6 +237,8 @@
     <ClInclude Include="demo19_InfoPopup.h" />
     <ClInclude Include="demo11_LayerOrder.h" />
     <ClInclude Include="demo21_DataDrivenColors.h" />
+    <ClInclude Include="demo22_AddImage.h" />
+    <ClInclude Include="demo23_AddVideo.h" />
     <ClInclude Include="mapboxApplication.h" />
     <ClInclude Include="demo03_MapStyle.h" />
     <ClInclude Include="MenuBar.h" />

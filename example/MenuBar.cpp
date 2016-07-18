@@ -25,6 +25,8 @@
 #include "demo19_InfoPopup.h"
 #include "demo20_MouseHighlight.h"
 #include "demo21_DataDrivenColors.h"
+#include "demo22_AddImage.h"
+#include "demo23_AddVideo.h"
 
 MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
 {
@@ -52,6 +54,8 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   cb->addItem("Info in Popup");
   cb->addItem("Mouse Highlight");
   cb->addItem("Data Driven Colors");
+  cb->addItem("Add an image");
+  cb->addItem("Add a video");
 
   cb->setCurrentIndex(0);
   cb->setMargin(10);
@@ -79,6 +83,8 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   stack->addWidget(new InfoPopup());
   stack->addWidget(new MouseHighlight());
   stack->addWidget(new DataDrivenColors());
+  stack->addWidget(new AddImage());
+  stack->addWidget(new AddVideo());
 
   cb->changed().connect(std::bind([=]() {
     int choice = cb->currentIndex();

@@ -150,6 +150,12 @@
     <ClCompile Include="demo21_DataDrivenColors.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
+    <ClCompile Include="demo22_AddImage.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="Demo23_AddVideo.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -292,6 +298,12 @@
       <Filter>Test Application\demos</Filter>
     </ClInclude>
     <ClInclude Include="demo21_DataDrivenColors.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo22_AddImage.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="demo23_AddVideo.h">
       <Filter>Test Application\demos</Filter>
     </ClInclude>
   </ItemGroup>

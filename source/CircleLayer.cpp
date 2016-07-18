@@ -59,7 +59,6 @@ namespace MapBox {
   CircleLayer & CircleLayer::color(C Wt::Json::Object & obj) {
     jsonColor = Wt::Json::serialize(obj);
     setPaint("circle-color", jsonColor);
-    Wt::log(jsonColor.toUTF8());
     return *this;
   }
 
