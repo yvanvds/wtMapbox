@@ -151,6 +151,7 @@
     <ClCompile Include="..\include\SymbolLayer.cpp" />
     <ClCompile Include="..\source\BackgroundLayer.cpp" />
     <ClCompile Include="..\source\CircleLayer.cpp" />
+    <ClCompile Include="..\source\Control.cpp" />
     <ClCompile Include="..\source\Conversions.cpp" />
     <ClCompile Include="..\source\Coordinate.cpp" />
     <ClCompile Include="..\source\FillLayer.cpp" />
@@ -185,6 +186,7 @@
     <ClCompile Include="demo22_AddImage.cpp" />
     <ClCompile Include="Demo23_AddVideo.cpp" />
     <ClCompile Include="demo24_RealtimeData.cpp" />
+    <ClCompile Include="demo25_AddControls.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mapboxApplication.cpp" />
     <ClCompile Include="demo03_MapStyle.cpp" />
@@ -201,6 +203,7 @@
   <ItemGroup>
     <ClInclude Include="..\include\BackgroundLayer.h" />
     <ClInclude Include="..\include\CircleLayer.h" />
+    <ClInclude Include="..\include\Control.h" />
     <ClInclude Include="..\include\Conversions.h" />
     <ClInclude Include="..\include\Coordinate.h" />
     <ClInclude Include="..\include\Definitions.h" />
@@ -241,6 +244,7 @@
     <ClInclude Include="demo22_AddImage.h" />
     <ClInclude Include="demo23_AddVideo.h" />
     <ClInclude Include="demo24_RealtimeData.h" />
+    <ClInclude Include="demo25_AddControls.h" />
     <ClInclude Include="mapboxApplication.h" />
     <ClInclude Include="demo03_MapStyle.h" />
     <ClInclude Include="MenuBar.h" />

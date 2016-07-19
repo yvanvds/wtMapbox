@@ -16,6 +16,9 @@
     <Filter Include="Test Application\demos">
       <UniqueIdentifier>{a7e17b8e-a313-477b-8a7d-51ae4c9b1306}</UniqueIdentifier>
     </Filter>
+    <Filter Include="wtMapbox\Control">
+      <UniqueIdentifier>{743f117e-a04a-4b4b-a3e8-29a22eb68a2a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -157,6 +160,12 @@
       <Filter>Test Application\demos</Filter>
     </ClCompile>
     <ClCompile Include="demo24_RealtimeData.cpp">
+      <Filter>Test Application\demos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Control.cpp">
+      <Filter>wtMapbox\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="demo25_AddControls.cpp">
       <Filter>Test Application\demos</Filter>
     </ClCompile>
   </ItemGroup>
@@ -310,6 +319,12 @@
       <Filter>Test Application\demos</Filter>
     </ClInclude>
     <ClInclude Include="demo24_RealtimeData.h">
+      <Filter>Test Application\demos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Control.h">
+      <Filter>wtMapbox\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="demo25_AddControls.h">
       <Filter>Test Application\demos</Filter>
     </ClInclude>
   </ItemGroup>

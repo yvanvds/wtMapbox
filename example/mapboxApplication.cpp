@@ -16,14 +16,14 @@ mapboxApplication::mapboxApplication(const WEnvironment & env) : WApplication(en
 
   WContainerWidget * mainContent = new WContainerWidget(root());
   mainContent->setStyleClass("examplemap");
-  map = new MapBox::Map(mainContent);
+  map = new MapBox::Map(mainContent, true);
   map->setMapStyle(MapBox::MAPSTYLE::Streets);
   map->zoom(14).center(MapBox::Coordinate(51.515823, -0.124331));
 
   // add all controls
-  map->addNavigationControl();
-  map->addGeoLocateControl();
-  map->addGeoCoderControl();
+  // map->addNavigationControl();
+  // map->addGeoLocateControl();
+  // map->addGeoCoderControl();
 
   menuBar = new MenuBar(root());
 

@@ -104,4 +104,12 @@ namespace MapBox {
     DragEnd,
     Pitch,
   };
+
+  enum class CONTROL {
+    Navigation,
+    GeoLocate,
+    Attribution,
+    Directions,
+    GeoCoder,
+  };
 }

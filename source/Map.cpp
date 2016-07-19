@@ -7,7 +7,7 @@
 
 namespace MapBox {
 
-  Map::Map(Wt::WContainerWidget * parent)
+  Map::Map(Wt::WContainerWidget * parent, bool withDirections)
     : clicked_(this, "click")
     , doubleClicked_(this, "dblclick")
     , mouseMoved_(nullptr)
@@ -15,7 +15,7 @@ namespace MapBox {
     , pitch_(0)
     , bearing_(0)
     , language_("en")
-    
+    , directionsEnabled_(withDirections)
   {
     setImplementation(new Wt::WContainerWidget());
     if (parent) parent->addWidget(this);
@@ -24,16 +24,22 @@ namespace MapBox {
     Wt::WApplication * app = Wt::WApplication::instance();
 
    
-    const std::string mburi = "https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.js";
+    C std::string mburi = "https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.js";
     app->require(mburi, "mapbox");
     app->useStyleSheet(Wt::WCssStyleSheet(Wt::WLink("https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.css")));
 
-    const std::string mbguri = "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v1.0.0/mapbox-gl-geocoder.js";
+    C std::string mbguri = "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v1.0.0/mapbox-gl-geocoder.js";
     app->require(mbguri, "mapboxgeocoder");
     app->useStyleSheet(Wt::WCssStyleSheet(Wt::WLink("https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v1.0.0/mapbox-gl-geocoder.css")));
 
-    const std::string supported = "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-supported/v0.0.1/mapbox-gl-supported.js";
+    C std::string supported = "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-supported/v0.0.1/mapbox-gl-supported.js";
     app->require(supported, "mapboxsupported");
+
+    C std::string diruri = "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v2.1.0/mapbox-gl-directions.js";
+    app->require(diruri, "mapboxdirections");
+    app->useStyleSheet(Wt::WCssStyleSheet(Wt::WLink("https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v2.1.0/mapbox-gl-directions.css")));
+
+
   }
 
 
@@ -286,6 +292,19 @@ namespace MapBox {
   Map & Map::addGeoLocateControl(CONTROL_POS pos) {
     std::stringstream stream;
     stream << jsRef() + ".map.addControl(new mapboxgl.Geolocate({ position: '";
+    stream << getControlPos(pos);
+    stream << "' }));\n";
+    doGmJavaScript(stream.str());
+    return *this;
+  }
+
+  Map & Map::addDirectionsControl(CONTROL_POS pos) {
+    if (!directionsEnabled_) {
+      Wt::log("Mapbox Directions api is not enabled!");
+      return *this;
+    }
+    std::stringstream stream;
+    stream << jsRef() + ".map.addControl(new mapboxgl.Directions()({ position: '";
     stream << getControlPos(pos);
     stream << "' }));\n";
     doGmJavaScript(stream.str());

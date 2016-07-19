@@ -40,7 +40,7 @@ namespace MapBox {
   {
   public:
 
-    Map(Wt::WContainerWidget * parent = 0);
+    Map(Wt::WContainerWidget * parent = 0, bool withDirections = false);
     virtual ~Map();
 
     /* Set a map zoom */
@@ -77,6 +77,7 @@ namespace MapBox {
     Map & addNavigationControl (CONTROL_POS pos = TOPRIGHT  );
     Map & addGeoLocateControl  (CONTROL_POS pos = TOPLEFT   );
     Map & addAttributionControl(CONTROL_POS pos = BOTTOMLEFT);
+    Map & addDirectionsControl (CONTROL_POS pos = TOPLEFT   );
     Map & addGeoCoderControl   ();
 
     // events
@@ -139,6 +140,7 @@ namespace MapBox {
     int pitch_;
     int bearing_;
     Wt::WString language_;
+    bool directionsEnabled_;
 
     //std::vector<Layer> layers_;
   };

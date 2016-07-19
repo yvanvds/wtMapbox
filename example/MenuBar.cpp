@@ -28,6 +28,7 @@
 #include "demo22_AddImage.h"
 #include "demo23_AddVideo.h"
 #include "demo24_RealtimeData.h"
+#include "demo25_AddControls.h"
 
 MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
 {
@@ -58,6 +59,7 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   cb->addItem("Add an image");
   cb->addItem("Add a video");
   cb->addItem("Realtime Data");
+  cb->addItem("Add Controls");
 
   cb->setCurrentIndex(0);
   cb->setMargin(10);
@@ -88,6 +90,7 @@ MenuBar::MenuBar(WContainerWidget * parent) : WContainerWidget(parent)
   stack->addWidget(new AddImage());
   stack->addWidget(new AddVideo());
   stack->addWidget(new RealtimeData());
+  stack->addWidget(new AddControls());
 
   cb->changed().connect(std::bind([=]() {
     int choice = cb->currentIndex();
