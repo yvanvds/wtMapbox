@@ -73,13 +73,6 @@ namespace MapBox {
     */
     Map & applyMapStyle();
 
-    // controls
-    Map & addNavigationControl (CONTROL_POS pos = TOPRIGHT  );
-    Map & addGeoLocateControl  (CONTROL_POS pos = TOPLEFT   );
-    Map & addAttributionControl(CONTROL_POS pos = BOTTOMLEFT);
-    Map & addDirectionsControl (CONTROL_POS pos = TOPLEFT   );
-    Map & addGeoCoderControl   ();
-
     // events
     Wt::JSignal<Coordinate> & clicked      () { return clicked_      ; }
     Wt::JSignal<Coordinate> & doubleClicked() { return doubleClicked_; }

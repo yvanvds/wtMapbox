@@ -273,60 +273,6 @@ namespace MapBox {
     return *this;
   }
 
-  Wt::WString getControlPos(CONTROL_POS pos) {
-    switch (pos) {
-      case TOPRIGHT   : return "top-right"   ;
-      case TOPLEFT    : return "top-left"    ;
-      case BOTTOMRIGHT: return "bottom-right";
-      case BOTTOMLEFT : return "bottom-left" ;
-    }
-  }
-
-  Map & Map::addNavigationControl(CONTROL_POS pos) {
-    std::stringstream stream;
-    stream << jsRef() + ".map.addControl(new mapboxgl.Navigation());\n";
-    doGmJavaScript(stream.str());
-    return *this;
-  }
-
-  Map & Map::addGeoLocateControl(CONTROL_POS pos) {
-    std::stringstream stream;
-    stream << jsRef() + ".map.addControl(new mapboxgl.Geolocate({ position: '";
-    stream << getControlPos(pos);
-    stream << "' }));\n";
-    doGmJavaScript(stream.str());
-    return *this;
-  }
-
-  Map & Map::addDirectionsControl(CONTROL_POS pos) {
-    if (!directionsEnabled_) {
-      Wt::log("Mapbox Directions api is not enabled!");
-      return *this;
-    }
-    std::stringstream stream;
-    stream << jsRef() + ".map.addControl(new mapboxgl.Directions()({ position: '";
-    stream << getControlPos(pos);
-    stream << "' }));\n";
-    doGmJavaScript(stream.str());
-    return *this;
-  }
-
-  Map & Map::addAttributionControl(CONTROL_POS pos) {
-    std::stringstream stream;
-    stream << jsRef() + ".map.addControl(new mapboxgl.Attribution({ position: '";
-    stream << getControlPos(pos);
-    stream << "' }));\n";
-    doGmJavaScript(stream.str());
-    return *this;
-  }
-
-  Map & Map::addGeoCoderControl() {
-    std::stringstream stream;
-    stream << jsRef() + ".map.addControl(new mapboxgl.Geocoder());\n";
-    doGmJavaScript(stream.str());
-    return *this;
-  }
-
   Map & Map::add(C JSHandler & handler) {
     std::stringstream stream;
     stream << jsRef() << "." << handler.id().toUTF8() << " = " << handler.code().toUTF8() << ";";

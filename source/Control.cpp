@@ -23,15 +23,11 @@ namespace MapBox {
   Control & Control::remove()
   {
     std::stringstream stream;
-    //stream //<< "try {"
-      if (type_ == CONTROL::Directions) {
-        stream << jsRef() << ".control._unload();";
-      } 
-      else {
-        stream << jsRef() << ".control.remove();";
-      }
-      //<< jsRef() << ".control.remove();";
-      //<< "} catch(err) {}";
+    // TODO: the directions control cannot be hidden. A issue is filed at:
+    // https://github.com/mapbox/mapbox-directions.js/issues/104
+    stream << "try {"
+      << jsRef() << ".control.remove();"
+     << "} catch(err) {}";
     doDelayedJavaScript(stream.str());
     return *this;
   }
